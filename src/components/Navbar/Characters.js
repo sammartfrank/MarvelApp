@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import ItemsList from '../ItemsList.js';
 import Filtros from '../Filtros.js';
 import '../../App.css';
+import MarvApi from '../services/MarvApi.js'
 
 class Characters extends Component {
 	constructor(props) {
@@ -11,6 +12,15 @@ class Characters extends Component {
 			loading:true,
 			characters: [],
 		}
+		this.api = new MarvApi();
+	}
+	componentDidMount(){
+		this.api.getCharacters().then(character=>{
+			this.setState({
+				loading:false,
+				character
+			})
+		})
 	}
 	render(){
 		return(
