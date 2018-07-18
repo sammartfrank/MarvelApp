@@ -23,7 +23,7 @@ class Comics extends Component {
 		})
 	}
 	componentWillUnmount(){
-		
+
 	}
 
 	render(){

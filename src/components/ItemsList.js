@@ -4,9 +4,8 @@ import '../App.css';
 import {NavLink} from 'react-router-dom';
 
 
-const {imagen,title,date} = this.state;
 
-const ItemsList = () => (
+const ItemsList = (imagen,title,date) => (
 <section className="items-section">
 	<h5 className="items-section-title">Mi Lista <NavLink to="/milista">Ver todas</NavLink></h5>
 	<div className="items-section-body">

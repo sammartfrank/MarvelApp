@@ -2,9 +2,8 @@ import React from 'react'
 import {NavLink} from 'react-router-dom';
 
 // Padre de Detalles
-const {imagen,title,date} = this.props
 
-const GridItem = () =>(
+const GridItem = (imagen,title,date) =>(
 	<article className="col-md-2">
 		<NavLink to="/Detalle" className="grid-item">
 			<img img={imagen} alt="Movie" className="img-fluid"></img>
