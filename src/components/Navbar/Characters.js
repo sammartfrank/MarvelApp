@@ -5,11 +5,11 @@ import '../../App.css';
 
 class Characters extends Component {
 	constructor(props) {
-		super(props)]
+		super(props)
 		this.state = {
 			error: '',
 			loading:true,
-			characters:[],
+			characters: [],
 		}
 	}
 	render(){
