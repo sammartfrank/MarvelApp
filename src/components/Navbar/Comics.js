@@ -3,16 +3,37 @@ import ItemsList from '../ItemsList.js';
 import Filtros from '../Filtros.js';
 import {NavLink} from 'react-router-dom';
 import '../../App.css';
+import MarvApi from '../services/MarvApi.js';
 
 
-class Peliculas extends Component {
+class Comics extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			error: '',
+			loading: true,
+			comics: [],
+		}
+		this.api = new MarvApi();
+	}
+
+	componentDidMount() {
+		this.api.getComics().then(comics =>{
+			this.setState({loading:false, comics})
+		})
+	}
+	componentWillUnmount(){
+		
+	}
+
 	render(){
+		const {error,loading,comics} = this.state
 		return(
 				<div>
 				<main role="main">
 				    <div className="py-5 bg-light">
 				        <div className="container">
-				        <h2>Peliculas </h2>
+				        <h2>Comics </h2>
 				        {/*Botones filtro*/}
 				        <form className="form-inline my-2 my-md-0" action="">
 				        	<select className="form-control"> 
@@ -42,4 +63,4 @@ class Peliculas extends Component {
 			)
 	}
 }
-export default Peliculas;
+export default Comics;

@@ -3,14 +3,22 @@ import ItemsList from '../ItemsList.js';
 import Filtros from '../Filtros.js';
 import '../../App.css';
 
-class Series extends Component {
+class Characters extends Component {
+	constructor(props) {
+		super(props)]
+		this.state = {
+			error: '',
+			loading:true,
+			characters:[],
+		}
+	}
 	render(){
 		return(
 			<div>
 				<main role="main">
 				    <div className="py-5 bg-light">
 				        <div className="container">
-				        <h1> Series </h1>
+				        <h1> Characters </h1>
 				        <form className="form-inline my-2 my-md-0" action="">
 				        	<select className="form-control md"> 
 				        		<option>Año</option>
@@ -54,4 +62,4 @@ class Series extends Component {
 			)
 	}
 }
-export default Series;
+export default Characters.js;
