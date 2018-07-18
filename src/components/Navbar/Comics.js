@@ -13,13 +13,27 @@ class Comics extends Component {
 			error: '',
 			loading: true,
 			comics: [],
+			characters: []
 		}
 		this.api = new MarvApi();
 	}
 
 	componentDidMount() {
-		this.api.getComics().then(comics =>{
-			this.setState({loading:false, comics})
+		
+		this.api.getComics().then(res => {
+			//console.log(res)
+			this.setState({
+				loading:false, 
+				comics: [...this.state.comics, ...res]
+			})
+		})
+
+		
+		this.api.getCharacters().then(res => {
+			this.setState({
+				loading:false, 
+				characters: [...this.state.characters, ...res]
+			})
 		})
 	}
 	componentWillUnmount(){
@@ -28,6 +42,7 @@ class Comics extends Component {
 
 	render(){
 		const {error,loading,comics} = this.state
+		{console.log('new', this.state.comics)}
 		return(
 				<div>
 				<main role="main">
@@ -51,7 +66,7 @@ class Comics extends Component {
 				            <section className="items-section">
 				                <div className="items-section-body">
 				                    <div className="row">
-				                   		 <ItemsList />
+				                   		 <ItemsList listadoResultados={comics} />
 				                    </div>
 				                </div>
 				            </section>
