@@ -60,9 +60,10 @@ class Comics extends Component {
 
 				            <section className="items-section">
 				                <div className="items-section-body">
-				                    <div className="row">
-				                   		 <ItemsList listadoResultados={comics} />
-				                    </div>
+				                    {loading && <img src="https://i.imgur.com/EH9HF6h.gif" width={150}/>}
+				                    	<div className="row">
+				                   		 	<ItemsList listadoResultados={comics} />
+				                    	</div>
 				                </div>
 				            </section>
 			            

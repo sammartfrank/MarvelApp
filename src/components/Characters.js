@@ -15,14 +15,15 @@ class Characters extends Component {
 		this.api = new MarvApi();
 	}
 	componentDidMount(){
-		this.api.getCharacters().then(character=>{
+		this.api.getCharacters().then(res=>{
 			this.setState({
 				loading:false,
-				character
+				characters: [...this.state.characters, ...res]
 			})
 		})
 	}
 	render(){
+		const {loading,characters} = this.state
 		return(
 			<div>
 				<main role="main">
@@ -43,25 +44,10 @@ class Characters extends Component {
                 		</form>
 				            <section className="items-section">
 				                <div className="items-section-body">
-				                    <div className="row">
-				                   		 <ItemsList />
-				                    </div>
-				                </div>
-				            </section>
-				            <section className="items-section">
-				                <h5 className="items-section-title">Películas más Populares <a href="">Ver todas</a></h5>
-				                <div className="items-section-body">
-				                    <div className="row">
-				                   		 <ItemsList />
-				                    </div>
-				                </div>
-				            </section>
-				            <section className="items-section">
-				                <h5 className="items-section-title">Series más Populares <a href="">Ver todas</a></h5>
-				                <div className="items-section-body">
-				                    <div className="row">
-				                        <ItemsList />
-				                    </div>
+				                    {loading && <img src="https://i.imgur.com/EH9HF6h.gif" width={150}/>}
+				                    	<div className="row">
+				                   			 <ItemsList listadoResultados={characters} />
+				                    	</div>
 				                </div>
 				            </section>
 				        </div>
@@ -72,4 +58,4 @@ class Characters extends Component {
 			)
 	}
 }
-export default Characters.js;
+export default Characters;

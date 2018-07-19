@@ -18,27 +18,50 @@ class Home extends Component {
 	}
 
 	componentDidMount() {
-		
 		this.api.getComics().then(res => {
 			//console.log(res)
 			this.setState({
 				loading:false, 
 				comics: [...this.state.comics, ...res]
 			})
-		})
-
-		
+		})		
 		this.api.getCharacters().then(res => {
 			this.setState({
 				loading:false, 
 				characters: [...this.state.characters, ...res]
 			})
 		})
+		window.addEventListener('scroll', this.handleScroll)
+	}
+
+	handleScroll = (event) => {
+    const estaAbajo = document.body.scrollHeight === window.scrollY + window.innerHeight;
+
+	    if(estaAbajo) {
+	      	this.api.getComics().then(res => {
+				//console.log(res)
+				this.setState({
+					loading:false, 
+					comics: [...this.state.comics, ...res]
+				})
+			})	
+			this.api.getCharacters().then(res => {
+				this.setState({
+					loading:false, 
+					characters: [...this.state.characters, ...res]
+				})
+			})
+
+	    }
+  	}
+
+	componentWillUnmount(){
+		window.removeEventListener('scroll', this.handleScroll)
 	}
 
 
 	render(){
-		const {comics,characters} = this.state
+		const {loading,comics,characters} = this.state
 		return (  
 			<div>
 				<main role="main">
@@ -46,17 +69,19 @@ class Home extends Component {
 				        <div className="container">
 				            <section className="items-section">
 				                <div className="items-section-body">
-				                    <div className="row">
-				                   		 <ItemsList listadoResultados={comics} />
-				                    </div>
+				                    {loading && <img src="https://i.imgur.com/EH9HF6h.gif" width={150}/>}
+					                    <div className="row">
+					                   		 <ItemsList listadoResultados={comics} />
+					                    </div>
 				                </div>
 				            </section>
 				            <section className="items-section">
 				                <h5 className="items-section-title">Personajes más Populares <NavLink to="/characters">Ver todas</NavLink></h5>
 				                <div className="items-section-body">
-				                    <div className="row">
-				                        <ItemsList listadoResultados={characters} />
-				                    </div>
+				                    {loading && <img src="https://i.imgur.com/EH9HF6h.gif" width={150}/>}
+					                    <div className="row">
+					                        <ItemsList listadoResultados={characters} />
+					                    </div>
 				                </div>
 				            </section>
 				        </div>
