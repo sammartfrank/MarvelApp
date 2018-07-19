@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
 import ItemsList from '../ItemsList.js';
 import {NavLink} from 'react-router-dom';
+import Comics from './Comics.js';
 
-
+const {comics} = this.state
 
 class Home extends Component {
+
 	render(){
 		return (  
 			<div>
@@ -14,7 +16,7 @@ class Home extends Component {
 				            <section className="items-section">
 				                <div className="items-section-body">
 				                    <div className="row">
-				                   		 <ItemsList />
+				                   		 <ItemsList listadoResultados={comics} />
 				                    </div>
 				                </div>
 				            </section>
@@ -22,7 +24,7 @@ class Home extends Component {
 				                <h5 className="items-section-title">Películas más Populares <NavLink to="/peliculas">Ver todas</NavLink></h5>
 				                <div className="items-section-body">
 				                    <div className="row">
-				                   		 <ItemsList />
+				                   		 <ItemsList listadoResultados={comics} />
 				                    </div>
 				                </div>
 				            </section>
@@ -30,7 +32,7 @@ class Home extends Component {
 				                <h5 className="items-section-title">Series más Populares <NavLink to="/series">Ver todas</NavLink></h5>
 				                <div className="items-section-body">
 				                    <div className="row">
-				                        <ItemsList />
+				                        <ItemsList listadoResultados={comics} />
 				                    </div>
 				                </div>
 				            </section>
