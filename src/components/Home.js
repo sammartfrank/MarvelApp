@@ -12,7 +12,9 @@ class Home extends Component {
 			error: '',
 			loading: true,
 			comics: [],
-			characters: []
+			characters: [],
+			characterPage: [],
+			comicsPage:[]
 		}
 		this.api = new MarvApi();
 	}
@@ -25,7 +27,7 @@ class Home extends Component {
 				comics: [...this.state.comics, ...res]
 			})
 		})		
-		this.api.getCharacters().then(res => {
+		this.api.getCharacters(20).then(res => {
 			this.setState({
 				loading:false, 
 				characters: [...this.state.characters, ...res]
@@ -41,7 +43,7 @@ class Home extends Component {
 			this.api.getCharacters().then(res => {
 				this.setState({
 					loading:false, 
-					characters: [...this.state.characters, ...res]
+					characters: [...this.state.characters, ...res],
 				})
 			})
 

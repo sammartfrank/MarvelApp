@@ -12,12 +12,12 @@ class MyApi {
 			}
 		})
 	}
-	getComics = () => (
-		this.axios.get('v1/public/comics')
+	getComics = (page = 1) => (
+		this.axios.get('v1/public/comics',{params:{offset: page * 20}})
 				  .then(response => response.data.data.results));
 				  // .then(response => console.log(response)));
-	getCharacters = () => (
-		this.axios.get('v1/public/characters')
+	getCharacters = (page =1 ) => (
+		this.axios.get('v1/public/characters', {params: {offset: page * 20}})
 				  .then(response => response.data.data.results));
 	
 }
