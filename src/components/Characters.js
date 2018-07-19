@@ -44,7 +44,7 @@ class Characters extends Component {
                 		</form>
 				            <section className="items-section">
 				                <div className="items-section-body">
-				                    {loading && <img src="https://i.imgur.com/EH9HF6h.gif" width={150}/>}
+				                    {loading && <img src="https://i.imgur.com/EH9HF6h.gif" width={200}/>}
 				                    	<div className="row">
 				                   			 <ItemsList listadoResultados={characters} />
 				                    	</div>

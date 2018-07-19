@@ -62,7 +62,7 @@ class Home extends Component {
 				        <div className="container">
 				            <section className="items-section">
 				                <div className="items-section-body">
-				                    {loading && <img src="https://i.imgur.com/EH9HF6h.gif" width={150}/>}
+				                    {loading && <img src="https://i.imgur.com/EH9HF6h.gif" width={200}/>}
 					                    <div className="row">
 					                   		 <ItemsList listadoResultados={comics} />
 					                    </div>
@@ -71,7 +71,7 @@ class Home extends Component {
 				            <section className="items-section">
 				                <h5 className="items-section-title">Personajes más Populares <NavLink to="/characters">Ver todas</NavLink></h5>
 				                <div className="items-section-body">
-				                    {loading && <img src="https://i.imgur.com/EH9HF6h.gif" width={150}/>}
+				                    {loading && <img src="https://i.imgur.com/EH9HF6h.gif" width={200}/>}
 					                    <div className="row">
 					                        <ItemsList listadoResultados={characters} />
 					                    </div>
