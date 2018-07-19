@@ -7,11 +7,6 @@ import {BrowserRouter} from 'react-router-dom';
 import {createStore,combineReducers} from 'redux'
 import {Provider} from 'react-redux'
 
-const rootReducer = combineReducers({
-	comics: comicsReducer,
-	characters: charactersReducer,
-	loading: loaderReducer
-})
 
 const comicsReducer = (state=[], action) => {
 	switch (action.type) {
@@ -40,6 +35,11 @@ const  loaderReducer = (state= false, action) => {
 	}
 }
 
+const rootReducer = combineReducers({
+	comics: comicsReducer,
+	characters: charactersReducer,
+	loading: loaderReducer
+})
 
 const store = createStore(
 	rootReducer,
