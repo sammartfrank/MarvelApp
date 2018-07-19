@@ -13,8 +13,7 @@ class Home extends Component {
 			loading: true,
 			comics: [],
 			characters: [],
-			characterPage: [],
-			comicsPage:[]
+			page: 1
 		}
 		this.api = new MarvApi();
 	}
@@ -27,7 +26,7 @@ class Home extends Component {
 				comics: [...this.state.comics, ...res]
 			})
 		})		
-		this.api.getCharacters(20).then(res => {
+		this.api.getCharacters().then(res => {
 			this.setState({
 				loading:false, 
 				characters: [...this.state.characters, ...res]
@@ -37,10 +36,11 @@ class Home extends Component {
 	}
 
 	handleScroll = (event) => {
-    const estaAbajo = document.body.scrollHeight === window.scrollY + window.innerHeight;
+		const {page} = this.state
+	    const estaAbajo = document.body.scrollHeight === window.scrollY + window.innerHeight;
 
 	    if(estaAbajo) {	
-			this.api.getCharacters().then(res => {
+			this.api.getCharacters(page).then(res => {
 				this.setState({
 					loading:false, 
 					characters: [...this.state.characters, ...res],

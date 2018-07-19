@@ -11,7 +11,7 @@ import Navbar from './components/Navbar/Navbar.js';
 import Footer from './components/Footer.js';
 import MarvApi from './components/services/MarvApi.js';
 
-import {Switch, Route, Redirect} from 'react-router-dom';
+import {Switch, Route, Redirect, withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 
 class App extends Component {
@@ -58,4 +58,4 @@ const mapDispatchToProps = dispatch => ({
   }
 })
 
-export default connect(mapStateToProps,mapDispatchToProps)(App);
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(App));
