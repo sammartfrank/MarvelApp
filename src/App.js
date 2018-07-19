@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Home from './components/Navbar/Home';
-import Comics from './components/Navbar/Comics.js';
-import Characters from './components/Navbar/Characters.js';
-import MiLista from './components/Navbar/MiLista.js';
+import Home from './components/Home';
+import Comics from './components/Comics.js';
+import Characters from './components/Characters.js';
+import MiLista from './components/MiLista.js';
 import Detalle from './components/Detalle.js';
 import NotFound from './components/NotFound.js';
 import Navbar from './components/Navbar/Navbar.js';

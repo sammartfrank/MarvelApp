@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import ItemsList from '../ItemsList.js';
-import Filtros from '../Filtros.js';
-import '../../App.css';
-import MarvApi from '../services/MarvApi.js'
+import ItemsList from './ItemsList.js';
+import Filtros from './Filtros.js';
+import '../App.css';
+import MarvApi from './services/MarvApi.js'
 
 class Characters extends Component {
 	constructor(props) {

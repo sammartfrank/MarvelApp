@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
-import ItemsList from '../ItemsList.js';
+import ItemsList from './ItemsList.js';
+import Filtros from './Filtros.js';
 import {NavLink} from 'react-router-dom';
-import Comics from './Comics.js';
-import MarvApi from '../services/MarvApi.js';
+import '../App.css';
+import MarvApi from './services/MarvApi.js';
 
 
-class Home extends Component {
+class Comics extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -18,7 +19,6 @@ class Home extends Component {
 	}
 
 	componentDidMount() {
-		
 		this.api.getComics().then(res => {
 			//console.log(res)
 			this.setState({
@@ -26,8 +26,6 @@ class Home extends Component {
 				comics: [...this.state.comics, ...res]
 			})
 		})
-
-		
 		this.api.getCharacters().then(res => {
 			this.setState({
 				loading:false, 
@@ -35,15 +33,31 @@ class Home extends Component {
 			})
 		})
 	}
-
-
+	componentWillUnmount(){
+	}
 	render(){
-		const {comics,characters} = this.state
-		return (  
-			<div>
+		const {error,loading,comics,characters} = this.state
+		{console.log('new', this.state.comics)}
+		return(
+				<div>
 				<main role="main">
 				    <div className="py-5 bg-light">
 				        <div className="container">
+				        <h2>Comics </h2>
+				        {/*Botones filtro*/}
+				        <form className="form-inline my-2 my-md-0" action="">
+				        	<select className="form-control"> 
+				        		<option>Año</option>
+				        	</select>
+				        	<select className="form-control">
+				        		<option>Ordenado por</option>
+				        	</select>
+				        	<select className="form-control">
+				        		<option>Generos</option>
+				        	</select>
+				        <Filtros />
+                		</form>
+
 				            <section className="items-section">
 				                <div className="items-section-body">
 				                    <div className="row">
@@ -51,19 +65,12 @@ class Home extends Component {
 				                    </div>
 				                </div>
 				            </section>
-				            <section className="items-section">
-				                <h5 className="items-section-title">Personajes más Populares <NavLink to="/characters">Ver todas</NavLink></h5>
-				                <div className="items-section-body">
-				                    <div className="row">
-				                        <ItemsList listadoResultados={characters} />
-				                    </div>
-				                </div>
-				            </section>
+			            
 				        </div>
 				    </div>
 				</main>
 			</div>
-)
+			)
+	}
 }
-}
-export default Home;
+export default Comics;
