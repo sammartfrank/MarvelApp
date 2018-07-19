@@ -13,7 +13,8 @@ class Comics extends Component {
 			error: '',
 			loading: true,
 			comics: [],
-			characters: []
+			characters: [],
+			page:1
 		}
 		this.api = new MarvApi();
 	}
@@ -26,14 +27,30 @@ class Comics extends Component {
 				comics: [...this.state.comics, ...res]
 			})
 		})
-		this.api.getCharacters().then(res => {
-			this.setState({
-				loading:false, 
-				characters: [...this.state.characters, ...res]
-			})
-		})
+		// this.api.getCharacters().then(res => {
+		// 	this.setState({
+		// 		loading:false, 
+		// 		characters: [...this.state.characters, ...res]
+		// 	})
+		// })
+		window.addEventListener('scroll', this.handleScroll)
 	}
+	handleScroll = (event) => {
+		const {page} = this.state
+	    const estaAbajo = document.body.scrollHeight === window.scrollY + window.innerHeight;
+	    if(estaAbajo) {	
+			this.api.getComics(page).then(res => {
+				this.setState({
+					loading:false, 
+					comics: [...this.state.comics, ...res],
+					page: this.state.page+1
+				})
+			})
+
+	    }
+  	}
 	componentWillUnmount(){
+		window.removeEventListener('scroll', this.handleScroll)
 	}
 	render(){
 		const {error,loading,comics,characters} = this.state

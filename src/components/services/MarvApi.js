@@ -16,14 +16,20 @@ class MyApi {
 		this.axios.get('v1/public/comics',
 			{
 				params:
-					{offset: page * 20}
+					{
+						limit: 6,
+						offset: page * 20,
+					}
 			}).then(response => response.data.data.results));
 
 	getCharacters = (page = 1 ) => (
 		this.axios.get('v1/public/characters',
 			{
 				params: 
-					{offset: page * 20}
+					{
+						limit: 6,
+						offset: page * 20,
+					}
 			}).then(response => response.data.data.results));
 	
 }
