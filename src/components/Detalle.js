@@ -2,11 +2,42 @@ import React, {Component} from 'react';
 import MyListAddButton from './MyListAddButton.js';
 import MyListRemoveButton from './MyListRemoveButton.js';
 import '../App.css';
+import MarvApi from './services/MarvApi.js';
 
 
 // pasarle por props toda la data dinamica
 
 class Detalle extends Component {
+
+    constructor(props){
+        super(props);
+        this.state = {
+            type: props.type,
+            detail: [],
+            loading: false,
+        }
+        this.api = new MarvApi()
+    }
+
+    componentDidMount(){
+
+        if(this.state.type === "comic"){
+            this.api.getComic().then(res =>{
+                this.setState({
+                    loading: false,
+                    detail: [...this.state.detail, ...res]
+                })
+            })
+        }else{
+            this.api.getCharacter().then(res=> {
+                this.setState({
+                loading:false,
+                detail:[res.data.data],
+            })
+})
+        }
+    }
+
 	render (){
 		return (	
 			<div className="container">

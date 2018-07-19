@@ -26,7 +26,8 @@ class App extends Component {
                 <Route  path="/comics" component={Comics} />
                 <Route  path="/characters" component={Characters} />
                 <Route  path="/milista" component={MiLista} />
-                <Route  path="/detalle" component={Detalle} />
+                <Route  path="/detalle/comic/:id" component={() => <Detalle type="comic"/>} />
+                <Route  path="/detalle/character/:id" component={() =><Detalle type="character" />} />
                 <Route component={NotFound}/>
               </Switch>
           </div>

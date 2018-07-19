@@ -5,7 +5,7 @@ import {NavLink} from 'react-router-dom';
 
 const GridItem = ({img,title,date}) =>(
 	<article className="col-md-2">
-		<NavLink to="/Detalle" className="grid-item">
+		<NavLink to="/detalle/" className="grid-item">
 			<img src={`${img.path}.${img.extension}`} alt="Movie" className="img-fluid"></img>
 			<span className="grid-item-body">
 				<span className="grid-item-title">{title}</span>
