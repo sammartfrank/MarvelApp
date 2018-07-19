@@ -4,13 +4,15 @@ import '../App.css';
 import {NavLink} from 'react-router-dom';
 
 const ItemsList = ({listadoResultados}) => (
-<section className="items-section">
-	<div className="items-section-body">
-		<div className="row">
-		{ listadoResultados.map( result => <GridItem key={result.id} img={result.thumbnail} title={result.title} date={result.date}/>) }
+<div className='container'>
+	<section className="items-section">
+		<div className="items-section-body">
+			<div className="row">
+			{ listadoResultados.map( result => <GridItem key={result.id} img={result.thumbnail} title={result.title} date={result.date}/>) }
+			</div>
 		</div>
-	</div>
-</section>
+	</section>
+</div>
 )
 
 export default ItemsList;
