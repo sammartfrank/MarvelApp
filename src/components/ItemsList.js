@@ -8,7 +8,7 @@ const ItemsList = ({listadoResultados}) => (
 	<h5 className="items-section-title">Mi Lista <NavLink to="/milista">Ver todas</NavLink></h5>
 	<div className="items-section-body">
 		<div className="row">
-		{ listadoResultados.map( result => <GridItem img={result.thumbnail} title={result.title} date={result.date}/>) }
+		{ listadoResultados.map( result => <GridItem key={result.id} img={result.thumbnail} title={result.title} date={result.date}/>) }
 		</div>
 	</div>
 </section>
