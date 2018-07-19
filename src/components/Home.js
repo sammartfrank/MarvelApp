@@ -37,14 +37,7 @@ class Home extends Component {
 	handleScroll = (event) => {
     const estaAbajo = document.body.scrollHeight === window.scrollY + window.innerHeight;
 
-	    if(estaAbajo) {
-	      	this.api.getComics().then(res => {
-				//console.log(res)
-				this.setState({
-					loading:false, 
-					comics: [...this.state.comics, ...res]
-				})
-			})	
+	    if(estaAbajo) {	
 			this.api.getCharacters().then(res => {
 				this.setState({
 					loading:false, 
