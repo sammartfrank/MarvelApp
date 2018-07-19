@@ -52,7 +52,7 @@ console.log('The State', state);
 
 
 ReactDOM.render(
-<Provider>
+<Provider store={store}>
 	<BrowserRouter>
 		<App />
 	</BrowserRouter>

@@ -39,11 +39,23 @@ class App extends Component {
     );
   }
 }
+
+
+const selectLoading = state => state.loading
+
 const mapStateToProps = state => ({
-  //Reducers
+  comics: state.comics,
+  characters: state.characters,
+  loading: selectLoading(state)
 })
 const mapDispatchToProps = dispatch => ({
-  // step => dispatch({type:'',step})
+  loadComics: () => {
+    dispatch({type: 'TURN_ON_LOADER'})
+    MarvApi.getComics().then(comics=>{
+      dispatch({type:'GET_COMICS',comics})
+      dispatch({type: 'TURN_OFF_LOADER'})
+    })
+  }
 })
 
 export default connect(mapStateToProps,mapDispatchToProps)(App);
