@@ -19,5 +19,6 @@ class MyApi {
 	getCharacters = () => (
 		this.axios.get('v1/public/characters')
 				  .then(response => response.data.data.results));
+	
 }
 export default MyApi;

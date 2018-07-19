@@ -12,6 +12,7 @@ import Footer from './components/Footer.js';
 import MarvApi from './components/services/MarvApi.js';
 
 import {Switch, Route, Redirect} from 'react-router-dom';
+import {connect} from 'react-redux';
 
 class App extends Component {
   render() {
@@ -38,5 +39,11 @@ class App extends Component {
     );
   }
 }
+const mapStateToProps = state => ({
+  //Reducers
+})
+const mapDispatchToProps = dispatch => ({
+  // step => dispatch({type:'',step})
+})
 
-export default App;
+export default connect(mapStateToProps,mapDispatchToProps)(App);

@@ -41,7 +41,7 @@ class Comics extends Component {
 	}
 
 	render(){
-		const {error,loading,comics} = this.state
+		const {error,loading,comics,characters} = this.state
 		{console.log('new', this.state.comics)}
 		return(
 				<div>
