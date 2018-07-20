@@ -26,7 +26,7 @@ class MyApi {
 			{
 				params: 
 					{	
-						offset:(page-1) * 20,
+						offset:(page+1) * 20,
 					}
 			}).then(response => response.data.data.results));
 	

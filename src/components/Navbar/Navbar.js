@@ -11,7 +11,7 @@ const Navbar = () => {
 										<li className="nav-item active"><NavLink className="nav-link" to='/' exact activeStyle={{color:'grey',fontWeight: 'bold',fontSize:'18px'}}>Home</NavLink></li>
 										<li className="nav-item active"><NavLink className="nav-link" to='/comics' activeStyle={{color:'grey',fontWeight: 'bold',fontSize:'18px'}}>Comics</NavLink></li>
 										<li className="nav-item active"><NavLink className="nav-link" to='/characters' activeStyle={{color:'grey',fontWeight: 'bold',fontSize:'18px'}}>characters</NavLink></li>
-										<li className="nav-item active"><NavLink className="nav-link" to='/MiLista' activeStyle={{color:'grey',fontWeight: 'bold',fontSize:'18px'}}>Mi Lista</NavLink></li>
+										<li className="nav-item active"><NavLink className="nav-link" to='/MiLista' activeStyle={{color:'grey',fontWeight: 'bold',fontSize:'18px'}}>My List</NavLink></li>
 									</ul>
 								</div>
 						</nav>

@@ -8,21 +8,22 @@ class MiLista extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			comics: []
+			comics: [],
+			characters: [],
 		}
 	}
 	render(){
-		const {comics} = this.state
+		const {comics, characters} = this.state
 		return (
 				<main role="main">
     				<div className="py-5 bg-light">
         				<div className="container">
-				            <h1>Mi Lista</h1>
+				            <h1>My List</h1>
 				         	<div className="filters-bar">
 			                	<div className="filters-bar-left">
 			                    	<select name="filter-viewed" id="filter-year" className="form-control">
-			                        	<option value="not-viewed">No Vistas</option>
-			                        	<option value="viewed">Vistas</option>
+			                        	<option value="not-viewed">Not Viewed</option>
+			                        	<option value="viewed">Viewed</option>
 			                    	</select>
 			                		<Filtros />
 			                	</div>
@@ -31,6 +32,13 @@ class MiLista extends Component {
                 			<div className="items-section-body">
                     			<div className="row">
                     				<ItemsList listadoResultados={comics}/>
+                    			</div>
+                			</div>
+            			</section>
+            			<section className="items-section">
+                			<div className="items-section-body">
+                    			<div className="row">
+                    				<ItemsList listadoResultados={characters}/>
                     			</div>
                 			</div>
             			</section>

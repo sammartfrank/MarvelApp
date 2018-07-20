@@ -64,7 +64,7 @@ class Home extends Component {
 				    <div className="py-5 bg-light">
 				        <div className="container">
 				            <section className="items-section">
-				                <h5 className="items-section-title">Comics mas Populares <NavLink to="/characters">Ver todas</NavLink></h5>
+				                <h5 className="items-section-title">Hot Comics <NavLink to="/comics">View all</NavLink></h5>
 
 				                <div className="items-section-body">
 				                    {loading && <img src="https://i.imgur.com/EH9HF6h.gif" width={200}/>}
@@ -74,7 +74,7 @@ class Home extends Component {
 				                </div>
 				            </section>
 				            <section className="items-section">
-				                <h5 className="items-section-title">Personajes más Populares <NavLink to="/characters">Ver todas</NavLink></h5>
+				                <h5 className="items-section-title">Hot Characters <NavLink to="/characters">View all</NavLink></h5>
 				                <div className="items-section-body">
 				                    {loading && <img src="https://i.imgur.com/EH9HF6h.gif" width={200}/>}
 					                    <div className="row">

@@ -18,10 +18,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+            <Navbar />
           <div className="container">
-              
-              <Navbar />
-
               <Switch>
                 <Route exact path="/" component={Home} />
                 <Route  path="/comics" component={Comics} />
@@ -31,6 +29,7 @@ class App extends Component {
                 <Route  path="/detalle/character/:id" component={() =><Detalle type="character" />} />
                 <Route component={NotFound}/>
               </Switch>
+              
           </div>
           <div className="footer">
               <Footer />
