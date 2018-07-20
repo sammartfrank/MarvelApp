@@ -41,13 +41,14 @@ class Comics extends Component {
 	    if(estaAbajo) {	
 	    	console.log(page)
 	    	this.setState({
-	    		loading:true
+	    		loading:true,
+	    		page:this.state.page+1
 	    	})
 			this.api.getComics(page).then(res => {
 				this.setState({
 					loading:false, 
 					comics: [...this.state.comics, ...res],
-					page: this.state.page+1
+					page: page
 				})
 			})
 
