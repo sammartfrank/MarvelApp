@@ -24,8 +24,8 @@ class MiLista extends Component {
 			                        	<option value="not-viewed">No Vistas</option>
 			                        	<option value="viewed">Vistas</option>
 			                    	</select>
+			                		<Filtros />
 			                	</div>
-			                <Filtros />
             			</div>
             			<section className="items-section">
                 			<div className="items-section-body">

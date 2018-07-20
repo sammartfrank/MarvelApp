@@ -13,7 +13,7 @@ class Comics extends Component {
 			error: '',
 			loading: true,
 			comics: [],
-			characters: [],
+			// characters: [],
 			page:1
 		}
 		this.api = new MarvApi();
@@ -60,7 +60,7 @@ class Comics extends Component {
 				<main role="main">
 				    <div className="py-5 bg-light">
 				        <div className="container">
-				        <h2 style={{color:'red', fontWeight:'bold'}}>Comics </h2>
+				        <h1 style={{color:'red', fontWeight:'bold'}}>Comics </h1>
 				        {/*Botones filtro*/}
 				        <form className="form-inline my-2 my-md-0" action="">
 				        	<select className="form-control"> 

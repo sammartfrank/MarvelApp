@@ -8,7 +8,7 @@ import MiLista from './components/MiLista.js';
 import Detalle from './components/Detalle.js';
 import NotFound from './components/NotFound.js';
 import Navbar from './components/Navbar/Navbar.js';
-import Footer from './components/Footer.js';
+import Footer from './components/footer/Footer.js';
 import MarvApi from './components/services/MarvApi.js';
 
 import {Switch, Route, Redirect, withRouter} from 'react-router-dom';

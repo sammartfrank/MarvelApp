@@ -8,7 +8,7 @@ const ItemsList = ({listadoResultados}) => (
 	<section className="items-section">
 		<div className="items-section-body">
 			<div className="row">
-			{ listadoResultados.map( result => <GridItem key={result.id} img={result.thumbnail} title={result.title} date={result.date}/>) }
+			{ listadoResultados.map( result => <GridItem key={result.id} img={result.thumbnail} title={result.title} date={result.date} desc={result.description}/>) }
 			</div>
 		</div>
 	</section>

@@ -11,6 +11,7 @@ class Characters extends Component {
 			error: '',
 			loading:true,
 			characters: [],
+			page:1
 		}
 		this.api = new MarvApi();
 	}
@@ -18,9 +19,25 @@ class Characters extends Component {
 		this.api.getCharacters().then(res=>{
 			this.setState({
 				loading:false,
-				characters: [...this.state.characters, ...res]
+				characters: [...this.state.characters, ...res],
+
 			})
 		})
+		window.addEventListener('scroll', this.handleScroll);
+	}
+	handleScroll = (event) => {
+		const {page} = this.state
+	    const estaAbajo = document.body.scrollHeight === window.scrollY + window.innerHeight;
+	    if(estaAbajo) {	
+			this.api.getCharacters(page).then(res => {
+				this.setState({
+					loading:false, 
+					characters: [...this.state.characters, ...res],
+					page: this.state.page+1
+				})
+			})
+
+	    }
 	}
 	render(){
 		const {loading,characters} = this.state
