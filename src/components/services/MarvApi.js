@@ -17,8 +17,7 @@ class MyApi {
 			{
 				params:
 					{
-						limit: 6,
-						offset: page * 20,
+						offset: (page-1) * 18,
 					}
 			}).then(response => response.data.data.results));
 
@@ -27,8 +26,7 @@ class MyApi {
 			{
 				params: 
 					{
-						limit: 6,
-						offset: page * 20,
+						offset: (page-1) * 18,
 					}
 			}).then(response => response.data.data.results));
 	

@@ -11,7 +11,7 @@ class Characters extends Component {
 			error: '',
 			loading:true,
 			characters: [],
-			page:1
+			page:0
 		}
 		this.api = new MarvApi();
 	}
@@ -23,12 +23,15 @@ class Characters extends Component {
 
 			})
 		})
-		window.addEventListener('scroll', this.handleScroll);
+	window.addEventListener('scroll', this.handleScroll);
 	}
 	handleScroll = (event) => {
 		const {page} = this.state
 	    const estaAbajo = document.body.scrollHeight === window.scrollY + window.innerHeight;
 	    if(estaAbajo) {	
+	    	this.setState({
+	    		loading:true
+	    	})
 			this.api.getCharacters(page).then(res => {
 				this.setState({
 					loading:false, 
@@ -61,10 +64,10 @@ class Characters extends Component {
                 		</form>
 				            <section className="items-section">
 				                <div className="items-section-body">
-				                    {loading && <img src="https://i.imgur.com/EH9HF6h.gif" width={200}/>}
 				                    	<div className="row">
 				                   			 <ItemsList listadoResultados={characters} />
 				                    	</div>
+				                   {loading && <img src="https://i.imgur.com/EH9HF6h.gif" width={200}/>}
 				                </div>
 				            </section>
 				        </div>
