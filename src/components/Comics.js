@@ -39,6 +39,7 @@ class Comics extends Component {
 		const {page} = this.state
 	    const estaAbajo = document.body.scrollHeight === window.scrollY + window.innerHeight;
 	    if(estaAbajo) {	
+	    	console.log(page)
 			this.api.getComics(page).then(res => {
 				this.setState({
 					loading:false, 
