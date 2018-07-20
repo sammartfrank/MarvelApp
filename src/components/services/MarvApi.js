@@ -17,7 +17,7 @@ class MyApi {
 			{
 				params:
 					{
-						offset: (page-1) * 18,
+						offset:(page-1) * 20,
 					}
 			}).then(response => response.data.data.results));
 
@@ -25,8 +25,8 @@ class MyApi {
 		this.axios.get('v1/public/characters',
 			{
 				params: 
-					{
-						offset: (page-1) * 18,
+					{	
+						offset:(page-1) * 20,
 					}
 			}).then(response => response.data.data.results));
 	
