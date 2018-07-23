@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Home from './components/Home';
 import Comics from './components/Comics.js';
@@ -9,7 +8,7 @@ import Detalle from './components/Detalle.js';
 import NotFound from './components/NotFound.js';
 import Navbar from './components/Navbar/Navbar.js';
 import Footer from './components/footer/Footer.js';
-import MarvApi from './components/services/MarvApi.js';
+import ComicsApi from './components/services/ComicsApi.js';
 
 import {Switch, Route, Redirect, withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
@@ -18,7 +17,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-            <Navbar />
+          <Navbar />
           <div className="container">
               <Switch>
                 <Route exact path="/" component={Home} />
@@ -50,7 +49,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   loadComics: () => {
     dispatch({type: 'TURN_ON_LOADER'})
-    MarvApi.getComics().then(comics=>{
+    ComicsApi.getComics().then(comics=>{
       dispatch({type:'GET_COMICS',comics})
       dispatch({type: 'TURN_OFF_LOADER'})
     })

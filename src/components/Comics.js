@@ -3,7 +3,7 @@ import ItemsList from './ItemsList.js';
 import Filtros from './Filtros.js';
 import {NavLink} from 'react-router-dom';
 import '../App.css';
-import MarvApi from './services/MarvApi.js';
+import ComicsApi from './services/ComicsApi.js';
 
 
 class Comics extends Component {
@@ -16,7 +16,7 @@ class Comics extends Component {
 			// characters: [],
 			page:0
 		}
-		this.api = new MarvApi();
+		this.api = new ComicsApi();
 	}
 
 	componentDidMount() {

@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import ItemsList from './ItemsList.js';
 import {NavLink} from 'react-router-dom';
 import Comics from './Comics.js';
-import MarvApi from './services/MarvApi.js';
+import ComicsApi from './services/ComicsApi.js';
+import CharactersApi from './services/CharactersApi'
 
 
 class Home extends Component {
@@ -15,18 +16,19 @@ class Home extends Component {
 			characters: [],
 			page: 1
 		}
-		this.api = new MarvApi();
+		this.apiComic = new ComicsApi();
+		this.apiCharacter = new CharactersApi();
 	}
 
 	componentDidMount() {
-		this.api.getComics().then(res => {
+		this.apiComic.getComics().then(res => {
 			//console.log(res)
 			this.setState({
 				loading:false, 
 				comics: [...this.state.comics, ...res]
 			})
 		})		
-		this.api.getCharacters().then(res => {
+		this.apiCharacter.getCharacters().then(res => {
 			this.setState({
 				loading:false, 
 				characters: [...this.state.characters, ...res]
