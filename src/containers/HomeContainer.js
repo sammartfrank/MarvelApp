@@ -1,7 +1,6 @@
 import { connect } from 'react-redux'
 import Home from '../components/Home'
-import ComicsApi from './services/ComicsApi.js';
-import CharactersApi from './services/CharactersApi'
+import MarvelApi from '../services/MarvelApi.js'
 
 const mapStateToProps = state => ({
   comics: state.comics,
@@ -11,15 +10,14 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   loadHomeData: () => {
-    const apiComic = new ComicsApi();
-    const apiCharacter = new CharactersApi();
+    const api = new MarvelApi();
     dispatch({
       type: 'TURN_ON_LOADER'
     })
 
     Promise.all([
-      apiComic.getComics(),
-      apiCharacter.getCharacters()
+      api.getComics(),
+      api.getCharacters()
     ]).then( ( [ comics, characters ] ) => {
       dispatch( {
         type: 'GET_COMICS',

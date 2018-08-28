@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import './App.css';
-import Home from './components/Home';
-import Comics from './components/Comics.js';
-import Characters from './components/Characters.js';
-import MiLista from './components/MiLista.js';
-import Detalle from './components/Detalle.js';
-import NotFound from './components/NotFound.js';
+import Home from './components/statefull/Home';
+import Comics from './components/statefull/Comics.js';
+import Characters from './components/statefull/Characters.js';
+import MiLista from './components/statefull/MiLista.js';
+import Detalle from './components/statefull/Detalle.js';
+import NotFound from './components/stateless/NotFound.js';
 import Navbar from './components/Navbar/Navbar.js';
 import Footer from './components/footer/Footer.js';
-import ComicsApi from './components/services/ComicsApi.js';
+import MarvelApi   from './services/MarvelApi.js';
 
-import {Switch, Route, Redirect, withRouter} from 'react-router-dom';
-import {connect} from 'react-redux';
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 class App extends Component {
   render() {
@@ -20,13 +20,13 @@ class App extends Component {
           <Navbar />
           <div className="container">
               <Switch>
-                <Route exact path="/" component={Home} />
-                <Route  path="/comics" component={Comics} />
-                <Route  path="/characters" component={Characters} />
-                <Route  path="/milista" component={MiLista} />
-                <Route  path="/detalle/comic/:id" component={() => <Detalle type="comic"/>} />
-                <Route  path="/detalle/character/:id" component={() =><Detalle type="character" />} />
-                <Route component={NotFound}/>
+                <Route exact path="/" component={ Home } />
+                <Route  path="/comics" component={ Comics } />
+                <Route  path="/characters" component={ Characters } />
+                <Route  path="/milista" component={ MiLista } />
+                <Route  path="/detalle/comic/:id" component={ () => <Detalle type="comic" />} />
+                <Route  path="/detalle/character/:id" component={ () => <Detalle type="character" />} />
+                <Route component={ NotFound } />
               </Switch>
               
           </div>
@@ -44,16 +44,16 @@ const selectLoading = state => state.loading
 const mapStateToProps = state => ({
   comics: state.comics,
   characters: state.characters,
-  loading: selectLoading(state)
+  loading: selectLoading( state )
 })
 const mapDispatchToProps = dispatch => ({
   loadComics: () => {
-    dispatch({type: 'TURN_ON_LOADER'})
-    ComicsApi.getComics().then(comics=>{
-      dispatch({type:'GET_COMICS',comics})
-      dispatch({type: 'TURN_OFF_LOADER'})
+    dispatch( { type: 'TURN_ON_LOADER' } )
+    MarvelApi.getComics().then( comics => {
+      dispatch( { type:'GET_COMICS', comics } )
+      dispatch( { type: 'TURN_OFF_LOADER' } )
     })
   }
 })
 
-export default withRouter(connect(mapStateToProps,mapDispatchToProps)(App));
+export default withRouter( connect( mapStateToProps, mapDispatchToProps )( App ) );

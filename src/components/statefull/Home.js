@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
-import ItemsList from './ItemsList.js';
-import {NavLink} from 'react-router-dom';
+import ItemsList from '../stateless/ItemsList.js';
+import { NavLink } from 'react-router-dom';
 import Comics from './Comics.js';
 
 class Home extends Component {
 
   componentDidMount() {
-
     const { loadHomeData } = this.props
-
     loadHomeData()
-
     window.addEventListener('scroll', this.handleScroll)
   }
-
   // handleScroll = (event) => {
   //  const {page} = this.state
   //     const estaAbajo = document.body.scrollHeight === window.scrollY + window.innerHeight;
@@ -29,12 +25,9 @@ class Home extends Component {
 
   //     }
  //   }
-
   componentWillUnmount(){
-    window.removeEventListener('scroll', this.handleScroll)
+    window.removeEventListener( 'scroll', this.handleScroll )
   }
-
-
   render () {
     const { loading, comics, characters } = this.props
     return (  
@@ -46,18 +39,18 @@ class Home extends Component {
                 <h5 className="items-section-title">Hot Comics <NavLink to="/comics">View all</NavLink></h5>
 
                 <div className="items-section-body">
-                  {loading && <img src="https://i.imgur.com/EH9HF6h.gif" width={200}/>}
+                  { loading && <img src="https://i.imgur.com/EH9HF6h.gif" width={200}/> }
                   <div className="row">
-                     <ItemsList listadoResultados={comics} />
+                     <ItemsList listadoResultados={ comics } />
                   </div>
                 </div>
               </section>
               <section className="items-section">
                   <h5 className="items-section-title">Hot Characters <NavLink to="/characters">View all</NavLink></h5>
                   <div className="items-section-body">
-                    {loading && <img src="https://i.imgur.com/EH9HF6h.gif" width={200}/>}
+                    { loading && <img src="https://i.imgur.com/EH9HF6h.gif" width={200}/> }
                       <div className="row">
-                        <ItemsList listadoResultados={characters} />
+                        <ItemsList listadoResultados={ characters } />
                       </div>
                   </div>
               </section>

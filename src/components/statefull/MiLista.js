@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import ItemsList from './ItemsList.js';
-import Filtros from './Filtros.js';
-import '../App.css';
-import '../style.css';
+import ItemsList from '../stateless/ItemsList.js';
+import Filtros from '../stateless/Filtros.js';
+import '../../App.css';
+import '../../style.css';
 
 class MiLista extends Component {
 	constructor( props ){

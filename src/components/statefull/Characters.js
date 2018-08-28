@@ -1,12 +1,12 @@
-import React, {Component} from 'react';
-import ItemsList from './ItemsList.js';
-import Filtros from './Filtros.js';
-import '../App.css';
+import React, { Component } from 'react';
+import ItemsList from '../stateless/ItemsList.js';
+import Filtros from '../stateless/Filtros.js';
+import '../../App.css';
 import MarvelApi from '../../services/MarvelApi.js'
 
 class Characters extends Component {
-	constructor(props) {
-		super(props)
+	constructor( props ) {
+		super( props )
 		this.state = {
 			error: '',
 			loading:true,
@@ -16,34 +16,33 @@ class Characters extends Component {
 		this.api = new MarvelApi();
 	}
 	componentDidMount(){
-		this.api.getCharacters().then(res=>{
+		this.api.getCharacters().then( res => {
 			this.setState({
-				loading:false,
-				characters: [...this.state.characters, ...res],
+				loading: false,
+				characters: [ ...this.state.characters, ...res ],
 
 			})
 		})
-	window.addEventListener('scroll', this.handleScroll);
+	window.addEventListener( 'scroll', this.handleScroll );
 	}
-	handleScroll = (event) => {
-		const {page} = this.state
+	handleScroll = ( event ) => {
+		const { page } = this.state
 	    const estaAbajo = document.body.scrollHeight === window.scrollY + window.innerHeight;
-	    if(estaAbajo) {	
+	    if( estaAbajo ) {	
 	    	this.setState({
 	    		loading:true
 	    	})
-			this.api.getCharacters(page).then(res => {
+			this.api.getCharacters( page ).then(res => {
 				this.setState({
 					loading:false, 
-					characters: [...this.state.characters, ...res],
+					characters: [ ...this.state.characters, ...res ],
 					page: this.state.page+1
 				})
 			})
-
 	    }
 	}
-	render(){
-		const {loading,characters} = this.state
+	render() {
+		const { loading, characters } = this.state
 		return(
 			<div>
 				<main role="main">
@@ -65,9 +64,9 @@ class Characters extends Component {
 				            <section className="items-section">
 				                <div className="items-section-body">
 				                    	<div className="row">
-				                   			 <ItemsList listadoResultados={characters} />
+				                   			 <ItemsList listadoResultados={ characters } />
 				                    	</div>
-				                   {loading && <img src="https://i.imgur.com/EH9HF6h.gif" width={200}/>}
+				                   { loading && <img src="https://i.imgur.com/EH9HF6h.gif" width={ 200 }/> }
 				                </div>
 				            </section>
 				        </div>
