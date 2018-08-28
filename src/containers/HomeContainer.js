@@ -20,20 +20,20 @@ const mapDispatchToProps = dispatch => ({
     Promise.all([
       apiComic.getComics(),
       apiCharacter.getCharacters()
-    ]).then(([ comics, characters ]) => {
-      dispatch({
+    ]).then( ( [ comics, characters ] ) => {
+      dispatch( {
         type: 'GET_COMICS',
         comics
-      })
-      dispatch({
+      } )
+      dispatch( {
         type: 'GET_CHARACTERS',
         characters
-      })
-      dispatch({
+      } )
+      dispatch( {
         type: 'TURN_OFF_LOADER'
-      })
-    })
+      } )
+    } )
   }
-})
+} )
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect( mapStateToProps, mapDispatchToProps )( Home );

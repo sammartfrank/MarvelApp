@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../App.css';
-import {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import SearchBox from '../SearchBox.js'
 const Navbar = () => {
 		return (

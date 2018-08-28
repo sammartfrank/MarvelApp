@@ -1,19 +1,19 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import ItemsList from './ItemsList.js';
 import Filtros from './Filtros.js';
 import '../App.css';
 import '../style.css';
 
 class MiLista extends Component {
-	constructor(props){
-		super(props);
+	constructor( props ){
+		super( props );
 		this.state = {
 			comics: [],
 			characters: [],
 		}
 	}
 	render(){
-		const {comics, characters} = this.state
+		const { comics, characters } = this.state
 		return (
 				<main role="main">
     				<div className="py-5 bg-light">
@@ -31,14 +31,14 @@ class MiLista extends Component {
             			<section className="items-section">
                 			<div className="items-section-body">
                     			<div className="row">
-                    				<ItemsList listadoResultados={comics}/>
+                    				<ItemsList listadoResultados={ comics }/>
                     			</div>
                 			</div>
             			</section>
             			<section className="items-section">
                 			<div className="items-section-body">
                     			<div className="row">
-                    				<ItemsList listadoResultados={characters}/>
+                    				<ItemsList listadoResultados={ characters }/>
                     			</div>
                 			</div>
             			</section>

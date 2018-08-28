@@ -1,7 +1,10 @@
 import axios from 'axios';
-import {PUBLIC_KEY,PRIVATE_KEY} from './keys.js'
+import { 
+	PUBLIC_KEY,
+	PRIVATE_KEY
+} from './keys'
 
-class ComicsApi {
+class MarvelApi {
 	constructor(){
 		this.axios = axios.create({
 			baseURL: 'http://gateway.marvel.com/',
@@ -11,6 +14,7 @@ class ComicsApi {
 			}
 		})
 	}
+	// COMICS
 	getComics = (page = 1) => (
 		this.axios.get('v1/public/comics',
 			{
@@ -35,8 +39,22 @@ class ComicsApi {
 		this.axios.get(`v1/public/comics/${comicId}/creators`).then(response=>{
 			response.data.data.results
 		})
-		)
-	
-	
+		);
+	//CHARACTERS
+	getCharacters = (page = 1 ) => (
+		this.axios.get('v1/public/characters',
+			{
+				params: 
+					{	
+						offset:(page+1) * 20,
+					}
+			}).then(response => response.data.data.results));
+
+	getCharacterId = (characterId) => (
+		this.axios.get(`v1/public/characters/${characterId}`).then(response =>{
+			response.data.data.results
+		})
+		);
 }
-export default ComicsApi;
+
+export default MarvelApi

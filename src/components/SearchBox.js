@@ -1,6 +1,8 @@
 import React from 'react';
 import '../App.css';
 
+//plantearlo en REDUX FORM
+
 const SearchBox = () => (
 	<div className="container">
 		<form className="form-group" onSubmit={(e)=>{e.preventDefault()}}>
