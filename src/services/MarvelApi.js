@@ -15,43 +15,43 @@ class MarvelApi {
 		})
 	}
 	// COMICS
-	getComics = (page = 1) => (
-		this.axios.get('v1/public/comics',
+	getComics = ( page = 1 ) => (
+		this.axios.get( 'v1/public/comics',
 			{
 				params:
 					{
-						offset:(page-1) * 20,
+						offset:( page-1 ) * 20,
 					}
-			}).then(response => response.data.data.results));
+			}).then( response => response.data.data.results ));
 	
-	getComicId = (comicId) => (
-		this.axios.get(`v1/public/comics/${comicId}`).then(response =>{
+	getComicId = ( comicId ) => (
+		this.axios.get( `v1/public/comics/${comicId}` ).then( response => {
 					response.data.data.results
 					})
 		);
 
-	getComicCharacters = (comicId) => (
-		this.axios.get(`/vi/public/comics/${comicId}`).then(response=>{
+	getComicCharacters = ( comicId ) => (
+		this.axios.get( `/vi/public/comics/${comicId}` ).then( response => {
 			response.data.data.results
 		})
 		);
-	getComicCreators = (comicId) => (
-		this.axios.get(`v1/public/comics/${comicId}/creators`).then(response=>{
+	getComicCreators = ( comicId ) => (
+		this.axios.get( `v1/public/comics/${comicId}/creators` ).then( response => {
 			response.data.data.results
 		})
 		);
 	//CHARACTERS
-	getCharacters = (page = 1 ) => (
+	getCharacters = ( page = 1 ) => (
 		this.axios.get('v1/public/characters',
 			{
 				params: 
 					{	
-						offset:(page+1) * 20,
+						offset:( page+1 ) * 20,
 					}
-			}).then(response => response.data.data.results));
+			}).then( response => response.data.data.results ) );
 
-	getCharacterId = (characterId) => (
-		this.axios.get(`v1/public/characters/${characterId}`).then(response =>{
+	getCharacterId = ( characterId ) => (
+		this.axios.get( `v1/public/characters/${characterId}` ).then( response => {
 			response.data.data.results
 		})
 		);

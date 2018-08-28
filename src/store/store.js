@@ -14,8 +14,8 @@ const store = createStore(
 	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 	)
 
-let state = store.getState();
+// let state = store.getState();
 
-console.log('The State', state);
+// console.log('The State', state);
 
 export default store;

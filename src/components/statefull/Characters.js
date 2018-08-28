@@ -15,7 +15,7 @@ class Characters extends Component {
 		}
 		this.api = new MarvelApi();
 	}
-	componentDidMount(){
+	componentDidMount() {
 		this.api.getCharacters().then( res => {
 			this.setState({
 				loading: false,
@@ -32,11 +32,11 @@ class Characters extends Component {
 	    	this.setState({
 	    		loading:true
 	    	})
-			this.api.getCharacters( page ).then(res => {
+			this.api.getCharacters( page ).then( res => {
 				this.setState({
 					loading:false, 
 					characters: [ ...this.state.characters, ...res ],
-					page: this.state.page+1
+					page: this.state.page + 1
 				})
 			})
 	    }

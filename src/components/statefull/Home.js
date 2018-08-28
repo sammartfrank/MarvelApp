@@ -8,7 +8,7 @@ class Home extends Component {
   componentDidMount() {
     const { loadHomeData } = this.props
     loadHomeData()
-    window.addEventListener('scroll', this.handleScroll)
+    // window.addEventListener( 'scroll', this.handleScroll )
   }
   // handleScroll = (event) => {
   //  const {page} = this.state
@@ -22,11 +22,10 @@ class Home extends Component {
   //        page: this.state.page+1
   //      })
   //    })
-
   //     }
  //   }
   componentWillUnmount(){
-    window.removeEventListener( 'scroll', this.handleScroll )
+    // window.removeEventListener( 'scroll', this.handleScroll )
   }
   render () {
     const { loading, comics, characters } = this.props
