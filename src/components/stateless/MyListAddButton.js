@@ -1,8 +1,8 @@
 import React from 'react';
 
-const MyListAddButton = () => (
+const MyListAddButton = ( addItemToList ) => (
 	<div>
-		<button type="submit" className="btn btn-outline-alert btn-lg">Add to my list</button>
+		<button className="btn btn-outline-success btn-lg" onClick={ e => {e.preventDefault(); addItemToList(e)} }type="submit">Add to my list</button>
 	</div>
 	)
 export default MyListAddButton;

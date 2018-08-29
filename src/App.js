@@ -21,12 +21,12 @@ class App extends Component {
         <br></br>
         <div className="container">
           <Switch>
-            <Route exact path="/" component={ Home } />
-            <Route path="/comics" component={ Comics } />
-            <Route path="/characters" component={ Characters } />
-            <Route path="/milista" component={ MiLista } />
+            <Route exact path="/" component={Home} />
+            <Route path="/comics" component={Comics} />
+            <Route path="/characters" component={Characters} />
+            <Route path="/milista" component={MiLista} />
             <Route path="/detalle/:type/:id" component={Detalle} />
-            <Route component={ NotFound } />
+            <Route component={NotFound} />
           </Switch>
         </div>
         <div className="footer">

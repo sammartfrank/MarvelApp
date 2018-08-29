@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 // Padre de Detalles
 
 const GridItem = ({ thumbnail, title, date, id, type }) =>
-	<article className="col-md-2">
+	<article className="col-md-3">
 		<NavLink to={`/detalle/${type}/${id}`} className="grid-item">
 			<img src={`${ thumbnail.path }.${ thumbnail.extension }`}
 				 alt="Movie"

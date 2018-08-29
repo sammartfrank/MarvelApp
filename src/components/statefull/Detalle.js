@@ -6,6 +6,11 @@ import MarvelApi from '../../services/MarvelApi.js';
 import GridItem from '../stateless/GridItem.js'
 
 // pasarle por props toda la data dinamica
+const cardstyl = {
+    minHeigth: '100vh',
+    background: 'rgba(200,200,200,0.1)',
+    borderRadius: '25%'
+}
 
 class Detalle extends Component {
 
@@ -33,29 +38,27 @@ class Detalle extends Component {
       })
     } else {
       this.api.getCharacterById(id).then(character => {
+        console.log('character', character)
         this.setState( {
           loading: false,
           item: character
         })
       })
     }
-  }
-
+}
   render () {
     const { item, loading } = this.state
     return loading ? (
         <span>Loading...</span>
       ) : (    
       <div className="container">
-       <section className="detail-section">
-          <div className="row">
-            <div className="jumbotron col-md-8">
-              <GridItem {...this.state.item}/>
-              <MyListAddButton />
-              <MyListRemoveButton />
+            <div style={cardstyl}>
+            <h1>{item.title}{item.name}</h1>
+              <GridItem style={{justifyContent:'center'}}{...this.state.item}/>
+                <p>{item.description}{item.id}</p>
             </div>
-          </div>
-        </section>
+              <MyListAddButton  />
+              <MyListRemoveButton />
       </div>
     )
   }

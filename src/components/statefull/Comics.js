@@ -41,7 +41,7 @@ class Comics extends Component {
       this.setState({
         loading: true
       })
-      this.api.getComics(page).then(comics => {
+      this.api.getComics(page + 1).then(comics => {
         this.setState(state => ({
           loading:false, 
           comics: [ ...state.comics, ...comics ],

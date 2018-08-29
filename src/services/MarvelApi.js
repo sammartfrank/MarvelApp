@@ -19,7 +19,7 @@ class MarvelApi {
   getComics (page = 1) {
     return this.axios.get('/v1/public/comics', {
       params: {
-        offset: (page - 1) * 20,
+        offset: (page - 1) * 5,
       }
     }).then(response => response.data.data.results)
   }
@@ -43,7 +43,7 @@ class MarvelApi {
   getCharacters (page = 1) {
     return this.axios.get('/v1/public/characters', {
       params: { 
-        offset:( page - 1 ) * 20,
+        offset:( page - 1 ) * 5,
       }
     })
     .then(response => response.data.data.results)

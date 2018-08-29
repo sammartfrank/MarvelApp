@@ -1,6 +1,8 @@
 import {
 	GET_SEARCH,
-	DRAFT_CHANGES
+	DRAFT_CHANGES,
+	ADD_COMIC,
+	ADD_CHARA
 }
 
 from '../constants/actionTypes.js'
@@ -17,3 +19,13 @@ export const changeDraft = ( valuesDraft ) => ({
 	type: DRAFT_CHANGES,
 	value: valuesDraft
 })
+
+export const addComicToList = (comic) => {
+	type: ADD_COMIC,
+	comic
+}
+
+export const addCharaToList = (chara) => {
+	type:ADD_CHARA,
+	chara
+}

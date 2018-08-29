@@ -3,7 +3,7 @@ import React from 'react';
 const MylistRemoveButton = () => (
 	<div>
 		<form>
-			<button type="submit">Erase</button>
+			<button  className="btn btn-outline-danger btn-lg"type="submit">Erase</button>
 		</form>	
 	</div>
 	)

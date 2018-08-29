@@ -5,8 +5,13 @@ import '../../App.css';
 import '../../style.css';
 
 class MiLista extends Component {
+    componentDidMount() {
+    const { loadListData } = this.props
+    loadListData()
+  }
+
 	render(){
-		const { loading, comics, characters } = this.props
+		const { loading, miListaDeComics, miListaDeChara } = this.props
 		return (
 				<main role="main">
     				<div className="py-5 bg-light">
@@ -25,14 +30,14 @@ class MiLista extends Component {
             			<section className="items-section">
                 			<div className="items-section-body">
                     			<div className="row">
-                    				<ItemsList listadoResultados={ comics }/>
+                    				<ItemsList listadoResultados={ miListaDeComics}/>
                     			</div>
                 			</div>
             			</section>
             			<section className="items-section">
                 			<div className="items-section-body">
                     			<div className="row">
-                    				<ItemsList listadoResultados={ characters }/>
+                    				<ItemsList listadoResultados={miListaDeChara}/>
                     			</div>
                 			</div>
             			</section>

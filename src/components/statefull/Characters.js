@@ -11,7 +11,7 @@ class Characters extends Component {
 			error: '',
 			loading:true,
 			characters: [],
-			page:0
+			page: 1
 		}
 		this.api = new MarvelApi();
 	}
@@ -20,7 +20,6 @@ class Characters extends Component {
 			this.setState({
 				loading: false,
 				characters: [ ...this.state.characters, ...res ],
-
 			})
 		})
 	window.addEventListener( 'scroll', this.handleScroll );
@@ -32,7 +31,7 @@ class Characters extends Component {
 	    	this.setState({
 	    		loading:true
 	    	})
-			this.api.getCharacters( page ).then( res => {
+			this.api.getCharacters( page + 1).then( res => {
 				this.setState({
 					loading:false, 
 					characters: [ ...this.state.characters, ...res ],
@@ -41,6 +40,9 @@ class Characters extends Component {
 			})
 	    }
 	}
+	componentWillUnmount() {
+    window.removeEventListener( 'scroll', this.handleScroll )
+  }
 	render() {
 		const { loading, characters } = this.state
 		return(
