@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
-import ItemsList from '../stateless/ItemsList.js';
-import { NavLink } from 'react-router-dom';
-import Comics from './Comics.js';
+import React, { Component } from 'react'
+import ItemsList from '../stateless/ItemsList.js'
+import { NavLink } from 'react-router-dom'
+import Comics from './Comics.js'
+import loadingImage from './images/loading.gif'
 
 class Home extends Component {
 
@@ -21,21 +22,20 @@ class Home extends Component {
             <div className="container">
               <section className="items-section">
                 <h5 className="items-section-title" style={{color:'red',fontSize:'30px'}}>Hot Comics <NavLink to="/comics">View all</NavLink></h5>
-
                 <div className="items-section-body">
-                  { loading && <img src="https://i.imgur.com/EH9HF6h.gif" width={ 200 }/> }
+                  {loading && <img src={loadingImage} width={ 200 }/>}
                   <div className="row">
-                     <ItemsList listadoResultados={ comics } />
+                    <ItemsList listadoResultados={comics} type="comic" />
                   </div>
                 </div>
               </section>
               <section className="items-section">
                   <h5 className="items-section-title" style={{color:'blue',fontSize:'30px'}}>Hot Characters <NavLink to="/characters">View all</NavLink></h5>
                   <div className="items-section-body">
-                    { loading && <img src="https://i.imgur.com/EH9HF6h.gif" width={ 200 }/> }
-                      <div className="row">
-                        <ItemsList listadoResultados={ characters } />
-                      </div>
+                    {loading && <img src="https://i.imgur.com/EH9HF6h.gif" width={ 200 }/>}
+                    <div className="row">
+                      <ItemsList listadoResultados={characters} type="characters" />
+                    </div>
                   </div>
               </section>
             </div>

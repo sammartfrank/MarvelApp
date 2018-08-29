@@ -1,12 +1,12 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom'
 
 // Padre de Detalles
 
-const GridItem = ( { img, title, date, id } ) => (
+const GridItem = ({ thumbnail, title, date, id, type }) =>
 	<article className="col-md-2">
-		<NavLink to="/detalle/:id" className="grid-item">
-			<img src={`${ img.path }.${ img.extension }`}
+		<NavLink to={`/detalle/${type}/${id}`} className="grid-item">
+			<img src={`${ thumbnail.path }.${ thumbnail.extension }`}
 				 alt="Movie"
 				 className="img-fluid">
 			</img>
@@ -16,5 +16,5 @@ const GridItem = ( { img, title, date, id } ) => (
 			</span>
 		</NavLink>
 	</article>
-)
-export default GridItem;
+
+export default GridItem

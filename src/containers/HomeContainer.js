@@ -12,7 +12,7 @@ import { changeDraft } from '../actions'
 const mapStateToProps = state => ({
   comics: getComics( state ),
   characters: getCharacters( state ),
-  loading: state.loading,
+  loading: state.loader,
   searchRes: getSearchDraft( state )
 
 })
