@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import ItemsList from '../stateless/ItemsList.js'
 import { NavLink } from 'react-router-dom'
-import Comics from './Comics.js'
 import loadingImage from './images/loading.gif'
 
 class Home extends Component {

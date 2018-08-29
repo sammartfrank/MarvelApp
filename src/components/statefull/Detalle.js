@@ -9,7 +9,7 @@ import GridItem from '../stateless/GridItem.js'
 const cardstyl = {
     minHeigth: '100vh',
     background: 'rgba(200,200,200,0.1)',
-    borderRadius: '25%'
+    borderRadius: '5%'
 }
 
 class Detalle extends Component {
@@ -55,10 +55,12 @@ class Detalle extends Component {
             <div style={cardstyl}>
             <h1>{item.title}{item.name}</h1>
               <GridItem style={{justifyContent:'center'}}{...this.state.item}/>
-                <p>{item.description}{item.id}</p>
+                <span style={{color:'red',fontWeigth:'bold',fontSize:'25px'}}><p>{item.description}{item.id}</p></span>
             </div>
+            <div className='row'>
               <MyListAddButton  />
               <MyListRemoveButton />
+            </div>
       </div>
     )
   }

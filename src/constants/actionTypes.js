@@ -2,7 +2,7 @@
 
 export const GET_COMICS = 'GET_COMICS'
 
-export const ADD_COMIC = 'ADD_COMIC'
+export const ADD_ITEM = 'ADD_ITEM'
 
 export const GET_CHARACTERS = 'GET_CHARACTERS'
 

@@ -1,7 +1,7 @@
 import {
 	GET_SEARCH,
 	DRAFT_CHANGES,
-	ADD_COMIC,
+	ADD_ITEM,
 	ADD_CHARA
 }
 
@@ -20,12 +20,12 @@ export const changeDraft = ( valuesDraft ) => ({
 	value: valuesDraft
 })
 
-export const addComicToList = (comic) => {
-	type: ADD_COMIC,
-	comic
-}
+export const addItemToList = ( item ) => ({
+	type: ADD_ITEM,
+	item
+})
 
-export const addCharaToList = (chara) => {
+export const addCharaToList = (chara) =>( {
 	type:ADD_CHARA,
 	chara
-}
+})

@@ -1,7 +1,6 @@
 import React from 'react';
 import GridItem from './GridItem.js';
 import '../../App.css';
-import { NavLink } from 'react-router-dom';
 
 const ItemsList = ({ listadoResultados, type }) =>
   <div className="container">

@@ -1,14 +1,14 @@
 import {
-	ADD_COMIC
+	ADD_ITEM
 } from '../constants/actionTypes.js'
 
 const initialState = []
 
 const miListaDeComicsReducer = (state=initialState, action) => {
 	switch (action.type) {
-		case ADD_COMIC:
+		case ADD_ITEM:
 			return [
-				...state, action.comic
+				...state, action.item
 			]
 		default:
 			return state

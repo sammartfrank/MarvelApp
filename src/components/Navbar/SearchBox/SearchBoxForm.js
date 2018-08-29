@@ -1,7 +1,10 @@
 import React from 'react';
 import { reduxForm, Field, SubmissionError } from 'redux-form'
 import { search } from '../../../actions'
+import './sty.css'
+
 //plantearlo en REDUX FORM
+
 
 const renderField = ({ input, label, type, meta: { touch, error} }) => (
 	<div> 
@@ -11,8 +14,8 @@ const renderField = ({ input, label, type, meta: { touch, error} }) => (
 
 let SearchBoxForm = ({ handleSubmit, submitSucceded, pristine, reset, subtmitting, error }) => (
 	<div className="container-fluid">
-		<form onSubmit={ handleSubmit }>
-	     	<Field name="search" component={ renderField } type="text"  aria-label="Search"  required />
+		<form onSubmit={ handleSubmit } >
+	     	<Field name="search" component={ renderField } className="form-control" type="text"  aria-label="Search"   required />
 	     	<button className="btn btn-outline-danger btn-lg" type="submit">Search</button>
 	  </form>
   </div>

@@ -11,7 +11,7 @@ class MiLista extends Component {
   }
 
 	render(){
-		const { loading, miListaDeComics, miListaDeChara } = this.props
+		const { miListaDeComics, miListaDeChara } = this.props
 		return (
 				<main role="main">
     				<div className="py-5 bg-light">

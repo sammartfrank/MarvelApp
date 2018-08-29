@@ -23,7 +23,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   addItemToList: ( item ) => {
   	console.log()
-  	dispatch(addItemToList( item, type ))
+  	dispatch(addItemToList( item ))
   }
 } )
 
