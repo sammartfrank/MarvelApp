@@ -8,24 +8,9 @@ class Home extends Component {
   componentDidMount() {
     const { loadHomeData } = this.props
     loadHomeData()
-    // window.addEventListener( 'scroll', this.handleScroll )
   }
-  // handleScroll = (event) => {
-  //  const {page} = this.state
-  //     const estaAbajo = document.body.scrollHeight === window.scrollY + window.innerHeight;
 
-  //     if(estaAbajo) {  
-  //    this.api.getCharacters(page).then(res => {
-  //      this.setState({
-  //        loading:false, 
-  //        characters: [...this.state.characters, ...res],
-  //        page: this.state.page+1
-  //      })
-  //    })
-  //     }
- //   }
-  componentWillUnmount(){
-    window.removeEventListener( 'scroll', this.handleScroll )
+  componentWillUnmount() {
   }
   render () {
     const { loading, comics, characters } = this.props

@@ -1,20 +1,28 @@
 import { connect } from 'react-redux'
 import Home from '../components/statefull/Home'
 import MarvelApi from '../services/MarvelApi.js'
+import {
+  getSearchDraft,
+  getCharacters,
+  getComics
+} from '../selectors'
+
+import { changeDraft } from '../actions'
 
 const mapStateToProps = state => ({
-  comics: state.comics,
-  characters: state.characters,
-  loading: state.loading
+  comics: getComics( state ),
+  characters: getCharacters( state ),
+  loading: state.loading,
+  searchRes: getSearchDraft( state )
+
 })
 
 const mapDispatchToProps = dispatch => ({
   loadHomeData: () => {
     const api = new MarvelApi();
     dispatch({
-      type: 'TURN_ON_LOADER'
+      type: 'TURN_ON_LOADER',
     })
-
     Promise.all([
       api.getComics(),
       api.getCharacters()
@@ -31,6 +39,9 @@ const mapDispatchToProps = dispatch => ({
         type: 'TURN_OFF_LOADER'
       } )
     } )
+  },
+  onDraftChange: ( valuesDraft ) => {
+    dispatch( changeDraft( valuesDraft ))
   }
 } )
 

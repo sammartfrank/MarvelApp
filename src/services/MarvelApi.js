@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { 
 	PUBLIC_KEY,
-	PRIVATE_KEY
 } from './keys'
 
 class MarvelApi {
@@ -55,6 +54,11 @@ class MarvelApi {
 			response.data.data.results
 		})
 		);
+	search = ( values, type ) => (
+		this.axios.get(`v1/public/${type}/${values}`)).then( response => {
+			response.data.data.results
+		})
+
 }
 
 export default MarvelApi

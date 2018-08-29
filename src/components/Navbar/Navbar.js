@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../App.css';
 import { NavLink } from 'react-router-dom';
-import SearchBox from '../stateless/SearchBox.js'
+import SearchBox from './SearchBox'
 const Navbar = () => {
 		return (
 					<div className='container'>
@@ -15,6 +15,7 @@ const Navbar = () => {
 									</ul>
 								</div>
 						</nav>
+						<br></br>
 						<SearchBox />
 					</div>
 				)

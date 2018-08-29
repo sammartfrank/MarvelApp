@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import ItemsList from '../stateless/ItemsList.js';
 import Filtros from '../stateless/Filtros.js';
-import { NavLink } from 'react-router-dom';
 import '../../App.css';
 import MarvelApi from '../../services/MarvelApi.js';
 
