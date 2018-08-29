@@ -43,7 +43,9 @@ class Detalle extends Component {
            	 <section className="detail-section">
                 <div className="row">
                     <div className="jumbotron col-md-8">
-                        <GridItem /> 
+                        <GridItem />
+                        <MyListAddButton />
+                        <MyListRemoveButton />
                     </div>
                 </div>
              </section>

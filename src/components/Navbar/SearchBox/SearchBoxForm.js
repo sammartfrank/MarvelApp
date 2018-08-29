@@ -10,20 +10,21 @@ const renderField = ({ input, label, type, meta: { touch, error} }) => (
 	)
 
 let SearchBoxForm = ({ handleSubmit, submitSucceded, pristine, reset, subtmitting, error }) => (
-	<div className="container">
+	<div className="container-fluid">
 		<form onSubmit={ handleSubmit }>
-	     	<Field name="search" component={renderField} required type="text"  aria-label="Search" />
-	     	<button className="btn btn-outline-alert btn-lg" type="submit">Search</button>
+	     	<Field name="search" component={ renderField } type="text"  aria-label="Search"  required />
+	     	<button className="btn btn-outline-danger btn-lg" type="submit">Search</button>
 	  </form>
-  </div>            
+  </div>
 	)
 export default SearchBoxForm = reduxForm({
 	form:'search',
 	onSubmit: ( values, dispatch ) => {
+		console.log( 'values', values)
 		return dispatch( search( values )).catch( err => {
 			throw new SubmissionError	({
 				_error: 'Error in the Search Engine'
 			})
 		})
 	}
-})( SearchBoxForm	)
+})( SearchBoxForm )

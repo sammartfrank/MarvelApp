@@ -12,7 +12,6 @@ class Comics extends Component {
 			error: '',
 			loading: true,
 			comics: [],
-			// characters: [],
 			page:0
 		}
 		this.api = new MarvelApi();
@@ -56,7 +55,7 @@ class Comics extends Component {
 		window.removeEventListener( 'scroll', this.handleScroll )
 	}
 	render(){
-		const { error, loading, comics, characters } = this.state
+		const { error, loading, comics } = this.state
 		{ console.log( 'new', this.state.comics ) }
 		return(
 				<div>
@@ -77,7 +76,7 @@ class Comics extends Component {
 				        	</select>
 				        <Filtros />
                 		</form>
-
+                		<br></br>
 				            <section className="items-section">
 				                <div className="items-section-body">
 				                    	<div className="row">

@@ -6,7 +6,7 @@ const Navbar = () => {
 		return (
 					<div className='container'>
 						<nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-								<div className="collapse navbar-collapse" id="navbarsExample07">
+								<div className="collapse navbar-collapse" id="">
 									<ul className="navbar-nav mr-auto" >
 										<li className="nav-item active"><NavLink className="nav-link" to='/' exact activeStyle={{color:'lightblue',fontWeight: 'bold',fontSize:'18px'}}>Home</NavLink></li>
 										<li className="nav-item active"><NavLink className="nav-link" to='/comics' activeStyle={{color:'lightblue',fontWeight: 'bold',fontSize:'18px'}}>Comics</NavLink></li>

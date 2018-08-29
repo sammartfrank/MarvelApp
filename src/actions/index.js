@@ -10,7 +10,7 @@ from '../constants/actionTypes.js'
 export const search = ( values ) => ( dispatch, getState, api ) =>  
 			api.search( values )
 			   .then( res => {
-			   	dispatch({type:GET_SEARCH, SearchOutput:res.data})
+			   	dispatch({ type:GET_SEARCH, SearchOutput:res.data })
 			   })
 
 export const changeDraft = ( valuesDraft ) => ({

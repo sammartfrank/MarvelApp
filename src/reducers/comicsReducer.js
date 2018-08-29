@@ -1,4 +1,3 @@
-import React from 'react'
 
 const comicsReducer = ( state = [], action ) => {
 	switch ( action.type ) {

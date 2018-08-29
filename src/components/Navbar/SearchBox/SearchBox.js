@@ -2,7 +2,7 @@ import React from 'react'
 import SearchBoxForm from './SearchBoxForm'
 
 const SearchBox = () => 
-			<div>
+			<div className='.md'>
 				<SearchBoxForm	/>
 			</div>
 export default SearchBox

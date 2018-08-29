@@ -61,6 +61,7 @@ class Characters extends Component {
 				        	</select>
 				       		<Filtros />
                 		</form>
+                		<br></br>
 				            <section className="items-section">
 				                <div className="items-section-body">
 				                    	<div className="row">

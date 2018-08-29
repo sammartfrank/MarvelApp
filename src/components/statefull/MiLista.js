@@ -5,15 +5,8 @@ import '../../App.css';
 import '../../style.css';
 
 class MiLista extends Component {
-	constructor( props ){
-		super( props );
-		this.state = {
-			comics: [],
-			characters: [],
-		}
-	}
 	render(){
-		const { comics, characters } = this.state
+		const { loading, comics, characters } = this.props
 		return (
 				<main role="main">
     				<div className="py-5 bg-light">
@@ -26,6 +19,7 @@ class MiLista extends Component {
 			                        	<option value="viewed">Viewed</option>
 			                    	</select>
 			                		<Filtros />
+			                		<br></br>
 			                	</div>
             			</div>
             			<section className="items-section">

@@ -14,12 +14,12 @@ class MarvelApi {
 		})
 	}
 	// COMICS
-	getComics = ( page = 1 ) => (
+	getComics = ( page = 0 ) => (
 		this.axios.get( 'v1/public/comics',
 			{
 				params:
 					{
-						offset:( page-1 ) * 20,
+						offset:( page + 1 ) * 20,
 					}
 			}).then( response => response.data.data.results ));
 	
@@ -40,7 +40,7 @@ class MarvelApi {
 		})
 		);
 	//CHARACTERS
-	getCharacters = ( page = 1 ) => (
+	getCharacters = ( page = 0 ) => (
 		this.axios.get('v1/public/characters',
 			{
 				params: 
