@@ -1,7 +1,7 @@
 import React from 'react';
-import '../App.css';
-import '../style.css';
-import {NavLink} from 'react-router-dom';
+import '../../App.css';
+import '../../style.css';
+import { NavLink } from 'react-router-dom';
 
 
 const Filtros = () => (
