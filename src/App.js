@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Home from './components/statefull/Home';
+import Home from './containers/HomeContainer';
 import Comics from './components/statefull/Comics.js';
 import Characters from './components/statefull/Characters.js';
 import MiLista from './components/statefull/MiLista.js';

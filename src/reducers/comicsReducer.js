@@ -1,9 +1,9 @@
 import React from 'react'
 
-const comicsReducer = (state=[], action) => {
-	switch (action.type) {
+const comicsReducer = ( state = [], action ) => {
+	switch ( action.type ) {
 		case 'GET_COMICS':
-		return action.comics
+			return action.comics
 		default:
 			return state
 	}

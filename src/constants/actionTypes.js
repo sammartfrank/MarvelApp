@@ -2,4 +2,4 @@
 
 export const GET_COMICS = 'GET_COMICS'
 
-export cnst GET_CHARACTERS = 'GET_CHARACTERS'
+export const GET_CHARACTERS = 'GET_CHARACTERS'

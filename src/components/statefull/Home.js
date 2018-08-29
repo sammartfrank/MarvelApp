@@ -25,7 +25,7 @@ class Home extends Component {
   //     }
  //   }
   componentWillUnmount(){
-    // window.removeEventListener( 'scroll', this.handleScroll )
+    window.removeEventListener( 'scroll', this.handleScroll )
   }
   render () {
     const { loading, comics, characters } = this.props
@@ -38,7 +38,7 @@ class Home extends Component {
                 <h5 className="items-section-title">Hot Comics <NavLink to="/comics">View all</NavLink></h5>
 
                 <div className="items-section-body">
-                  { loading && <img src="https://i.imgur.com/EH9HF6h.gif" width={200}/> }
+                  { loading && <img src="https://i.imgur.com/EH9HF6h.gif" width={ 200 }/> }
                   <div className="row">
                      <ItemsList listadoResultados={ comics } />
                   </div>
@@ -47,7 +47,7 @@ class Home extends Component {
               <section className="items-section">
                   <h5 className="items-section-title">Hot Characters <NavLink to="/characters">View all</NavLink></h5>
                   <div className="items-section-body">
-                    { loading && <img src="https://i.imgur.com/EH9HF6h.gif" width={200}/> }
+                    { loading && <img src="https://i.imgur.com/EH9HF6h.gif" width={ 200 }/> }
                       <div className="row">
                         <ItemsList listadoResultados={ characters } />
                       </div>

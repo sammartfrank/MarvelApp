@@ -1,6 +1,6 @@
 import React from 'react';
-import '../App.css';
-
+import '../../App.css';
+import { reduxForm, Field, SubmissionError } from 'redux-form'
 //plantearlo en REDUX FORM
 
 const SearchBox = () => (
