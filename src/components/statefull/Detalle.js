@@ -49,11 +49,11 @@ class Detalle extends Component {
       })
     }
 }
-    addItemToList = (item ) => {
-      const { type, id } = this.props.match.params
+    addItemToList = ( item ) => {
+      const { type } = this.props
       if (type === "comic") {
         this.setState({
-          coimcMList: item
+          comicMList: [item]
         })
       }
       else {
@@ -64,6 +64,7 @@ class Detalle extends Component {
     }
   render () {
     const { item, loading } = this.state
+    const { addItemToList, removeItemFromList } = this.props
     return loading ? (
         <span>Loading...</span>
       ) : (    
@@ -74,12 +75,12 @@ class Detalle extends Component {
               <GridItem style={{justifyContent:'center'}} {...this.state.item}/>
               <div className="col-md">
               <h5>Description</h5>
-                <span style={{color:'blue',fontSize:'25px'}}><p>{item.description}{item.id}</p></span>
+                <span style={{color:'blue',fontSize:'25px', justifyContent:'center'}}><p>{item.description}{item.id}</p></span>
               </div>
               </div>
             <div className='row'>
-              <MyListAddButton addItemToList={this.addItemToList} />
-              <MyListRemoveButton removeItemFromList={this.removeItem} />
+              <MyListAddButton onAddItemToList={addItemToList} />
+              <MyListRemoveButton onRemoveItemFromList={removeItemFromList} />
             </div>
             <br></br>
       </div>
