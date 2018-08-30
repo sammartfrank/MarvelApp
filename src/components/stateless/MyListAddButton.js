@@ -1,12 +1,13 @@
 import React from 'react';
 
-const addItemToList = () => {
 
-}
-
-const MyListAddButton = ( addItemToList ) => (
+const MyListAddButton = ({ addItemToList }) => (
 	<div>
-		<button className="btn btn-outline-success btn-lg" onClick={ e => {e.preventDefault(); this.addItemToList} }type="submit">Add to my list</button>
+		<button className="btn btn-outline-success btn-lg"
+			onClick={e => {e.preventDefault();addItemToList()}}
+			type="submit">
+				Add to my list
+		</button>
 	</div>
 	)
 export default MyListAddButton;

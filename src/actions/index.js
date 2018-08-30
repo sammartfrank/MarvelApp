@@ -25,7 +25,7 @@ export const addItemToList = ( item ) => ({
 	item
 })
 
-export const addCharaToList = (chara) =>( {
-	type:ADD_CHARA,
-	chara
-})
+// export const addCharaToList = (chara) =>( {
+// 	type:ADD_CHARA,
+// 	chara
+// })

@@ -16,6 +16,7 @@ const ItemsList = ({ listadoResultados, type }) =>
               title={result.title}
               date={result.date}
               desc={result.description}
+              name={result.name}
             />
           )}
         </div>

@@ -30,14 +30,14 @@ class MiLista extends Component {
             			<section className="items-section">
                 			<div className="items-section-body">
                     			<div className="row">
-                    				<ItemsList listadoResultados={ miListaDeComics}/>
+                    				{/*<ItemsList listadoResultados={ miListaDeComics}/>*/}
                     			</div>
                 			</div>
             			</section>
             			<section className="items-section">
                 			<div className="items-section-body">
                     			<div className="row">
-                    				<ItemsList listadoResultados={miListaDeChara}/>
+                    				{/*<ItemsList listadoResultados={miListaDeChara}/>*/}
                     			</div>
                 			</div>
             			</section>

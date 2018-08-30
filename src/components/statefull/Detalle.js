@@ -16,10 +16,12 @@ class Detalle extends Component {
 
   constructor (props) { 
     super(props)
+    // this.handleClick = this.handleClick.bind(this)
     this.state = {
       item: null,
       loading: true,
-      itemList: []
+      comicMList: null,
+      characterMList: null
     }
     this.api = new MarvelApi()
   }
@@ -47,8 +49,21 @@ class Detalle extends Component {
       })
     }
 }
+    addItemToList = (item ) => {
+      const { type, id } = this.props.match.params
+      if (type === "comic") {
+        this.setState({
+          coimcMList: item
+        })
+      }
+      else {
+        this.setState({
+          characterMList: item
+        })
+      }
+    }
   render () {
-    const { item, loading, itemList } = this.state
+    const { item, loading } = this.state
     return loading ? (
         <span>Loading...</span>
       ) : (    
@@ -63,9 +78,10 @@ class Detalle extends Component {
               </div>
               </div>
             <div className='row'>
-              <MyListAddButton />
+              <MyListAddButton addItemToList={this.addItemToList} />
               <MyListRemoveButton />
             </div>
+            <br></br>
       </div>
     </div>
     )
