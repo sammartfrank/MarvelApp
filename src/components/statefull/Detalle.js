@@ -7,7 +7,7 @@ import GridItem from '../stateless/GridItem.js'
 
 // pasarle por props toda la data dinamica
 const cardstyl = {
-    minHeigth: '100vh',
+    minHeigth: '50vh',
     background: 'rgba(200,200,200,0.1)',
     borderRadius: '5%'
 }
@@ -18,7 +18,8 @@ class Detalle extends Component {
     super(props)
     this.state = {
       item: null,
-      loading: true
+      loading: true,
+      itemList: []
     }
     this.api = new MarvelApi()
   }
@@ -47,21 +48,26 @@ class Detalle extends Component {
     }
 }
   render () {
-    const { item, loading } = this.state
+    const { item, loading, itemList } = this.state
     return loading ? (
         <span>Loading...</span>
       ) : (    
       <div className="container">
             <div style={cardstyl}>
             <h1>{item.title}{item.name}</h1>
-              <GridItem style={{justifyContent:'center'}}{...this.state.item}/>
-                <span style={{color:'red',fontWeigth:'bold',fontSize:'25px'}}><p>{item.description}{item.id}</p></span>
-            </div>
+            <div className="row">
+              <GridItem style={{justifyContent:'center'}} {...this.state.item}/>
+              <div className="col-md">
+              <h5>Description</h5>
+                <span style={{color:'blue',fontSize:'25px'}}><p>{item.description}{item.id}</p></span>
+              </div>
+              </div>
             <div className='row'>
-              <MyListAddButton  />
+              <MyListAddButton />
               <MyListRemoveButton />
             </div>
       </div>
+    </div>
     )
   }
 }

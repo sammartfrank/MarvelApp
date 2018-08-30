@@ -10,7 +10,7 @@ const Navbar = () => {
 									<ul className="navbar-nav mr-auto" >
 										<li className="nav-item active"><NavLink className="nav-link" to='/' exact activeStyle={{color:'lightblue',fontWeight: 'bold',fontSize:'18px'}}>Home</NavLink></li>
 										<li className="nav-item active"><NavLink className="nav-link" to='/comics' activeStyle={{color:'lightblue',fontWeight: 'bold',fontSize:'18px'}}>Comics</NavLink></li>
-										<li className="nav-item active"><NavLink className="nav-link" to='/characters' activeStyle={{color:'lightblue',fontWeight: 'bold',fontSize:'18px'}}>characters</NavLink></li>
+										<li className="nav-item active"><NavLink className="nav-link" to='/characters' activeStyle={{color:'lightblue',fontWeight: 'bold',fontSize:'18px'}}>Characters</NavLink></li>
 										<li className="nav-item active"><NavLink className="nav-link" to='/MiLista' activeStyle={{color:'lightblue',fontWeight: 'bold',fontSize:'18px'}}>My List</NavLink></li>
 									</ul>
 								</div>

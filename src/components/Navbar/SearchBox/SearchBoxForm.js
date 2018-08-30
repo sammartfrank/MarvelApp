@@ -6,17 +6,17 @@ import './sty.css'
 //plantearlo en REDUX FORM
 
 
-const renderField = ({ input, label, type, meta: { touch, error} }) => (
+const renderField = ({ input, label, type, meta: { touched, error} }) => (
 	<div> 
 		<input { ...input } type={ type }/>
   </div>
 	)
-
 let SearchBoxForm = ({ handleSubmit, submitSucceded, pristine, reset, subtmitting, error }) => (
 	<div className="container-fluid">
 		<form onSubmit={ handleSubmit } >
 	     	<Field name="search" component={ renderField } className="form-control" type="text"  aria-label="Search"   required />
 	     	<button className="btn btn-outline-danger btn-lg" type="submit">Search</button>
+	     	{error && <div><span style={{color:'red'}}>{error}</span></div>}
 	  </form>
   </div>
 	)
