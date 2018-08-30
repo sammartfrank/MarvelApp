@@ -79,7 +79,7 @@ class Detalle extends Component {
               </div>
             <div className='row'>
               <MyListAddButton addItemToList={this.addItemToList} />
-              <MyListRemoveButton />
+              <MyListRemoveButton removeItemFromList={this.removeItem} />
             </div>
             <br></br>
       </div>
