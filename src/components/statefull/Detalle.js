@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import MyListAddButton from '../stateless/MyListAddButton.js';
-import MyListRemoveButton from '../stateless/MyListRemoveButton.js';
 import '../../App.css';
 import MarvelApi from '../../services/MarvelApi.js';
 import GridItem from '../stateless/GridItem.js'
@@ -16,7 +14,6 @@ class Detalle extends Component {
 
   constructor (props) { 
     super(props)
-    // this.handleClick = this.handleClick.bind(this)
     this.state = {
       item: null,
       loading: true,
@@ -49,22 +46,11 @@ class Detalle extends Component {
       })
     }
 }
-    addItemToList = ( item ) => {
-      const { type } = this.props
-      if (type === "comic") {
-        this.setState({
-          comicMList: [item]
-        })
-      }
-      else {
-        this.setState({
-          characterMList: item
-        })
-      }
-    }
-  render () {
+
+
+render () {
     const { item, loading } = this.state
-    const { addItemToList, removeItemFromList } = this.props
+    const { onClickAdd, onClickRemove} = this.props
     return loading ? (
         <span>Loading...</span>
       ) : (    
@@ -73,14 +59,21 @@ class Detalle extends Component {
             <h1>{item.title}{item.name}</h1>
             <div className="row">
               <GridItem style={{justifyContent:'center'}} {...this.state.item}/>
-              <div className="col-md">
-              <h5>Description</h5>
-                <span style={{color:'blue',fontSize:'25px', justifyContent:'center'}}><p>{item.description}{item.id}</p></span>
-              </div>
+                <div className="col-md">
+                <h5>Description</h5>
+                  <span style={{color:'blue',fontSize:'25px', justifyContent:'center'}}><p>{item.description}{item.id}</p></span>
+                </div>
               </div>
             <div className='row'>
-              <MyListAddButton onAddItemToList={addItemToList} />
-              <MyListRemoveButton onRemoveItemFromList={removeItemFromList} />
+            {/*Buttons*/}
+            <button onClick={e => {
+              e.preventDefault();
+              onClickAdd()
+            }}>Add to my list</button>
+            <button onClick={e => {
+              e.preventDefault();
+              onClickRemove()
+            }}>Remove</button>
             </div>
             <br></br>
       </div>

@@ -20,10 +20,15 @@ export const changeDraft = ( valuesDraft ) => ({
 	value: valuesDraft
 })
 
-export const addItemToList = ( item ) => ({
+export const addItemToList =  ( item )  => {
+	const newItem = {
+		type: ADD_ITEM,
+		value: item
+
+	}
 	type: ADD_ITEM,
 	item
-})
+}
 
 // export const addCharaToList = (chara) =>( {
 // 	type:ADD_CHARA,

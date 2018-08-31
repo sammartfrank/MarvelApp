@@ -21,10 +21,11 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  addItemToList: ( item ) => {
-  	console.log()
-  	dispatch(addItemToList( item ))
-  }
+  onClickAdd: () => {
+    console.log()
+    dispatch( addItemToList() )
+  },
+  
 } )
 
 export default connect( mapStateToProps, mapDispatchToProps )( Detalle );

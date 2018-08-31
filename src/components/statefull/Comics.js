@@ -51,6 +51,8 @@ class Comics extends Component {
     }
   }
 
+
+
   componentWillUnmount() {
     window.removeEventListener( 'scroll', this.handleScroll )
   }
@@ -81,6 +83,7 @@ class Comics extends Component {
                         <div className="row">
                           <ItemsList listadoResultados={ comics } type="comics" />
                         </div>
+                        { error && <div><span>An Error Ocurred</span></div>}
                         {loading && <img src="https://i.imgur.com/EH9HF6h.gif" width={190}/>}
                       </div>
                     </section>
