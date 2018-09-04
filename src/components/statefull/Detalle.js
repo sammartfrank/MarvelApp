@@ -45,41 +45,48 @@ class Detalle extends Component {
         })
       })
     }
-}
-
+  }
+  onClickAdd(e, item) {
+    this.setState({
+      comicMList: [
+      ...item, item
+      ]
+    })
+  }
 
 render () {
     const { item, loading } = this.state
     const { onClickAdd, onClickRemove} = this.props
     return loading ? (
         <span>Loading...</span>
-      ) : (    
+      ) : (  
       <div className="container">
-            <div style={cardstyl}>
-            <h1>{item.title}{item.name}</h1>
-            <div className="row">
-              <GridItem style={{justifyContent:'center'}} {...this.state.item}/>
-                <div className="col-md">
-                <h5>Description</h5>
-                  <span style={{color:'blue',fontSize:'25px', justifyContent:'center'}}><p>{item.description}{item.id}</p></span>
-                </div>
-              </div>
-            <div className='row'>
-            {/*Buttons*/}
-            <button onClick={e => {
-              e.preventDefault();
-              onClickAdd()
-            }}>Add to my list</button>
-            <button onClick={e => {
-              e.preventDefault();
-              onClickRemove()
-            }}>Remove</button>
+        <div className="row">
+          <GridItem  {...this.state.item}/>
+          <div className="card" style={{width: '50%'}}>
+            <div className="card-body">
+              <h5 className="card-title" style={{fontWeight:'bold'}}>{item.title}</h5>
+              <h5 className="card-title">{item.name}</h5>
+              {item.description ? <p className="card-text" style={{color:'grey', width:'100%', textAlign:'center', justifyContent:'center', display:'flex'}}>{item.description}</p> : <p>No description available</p>}
+              <button onClick={e => {
+                e.preventDefault();
+                onClickAdd()
+              }} className="btn btn-primary">Add to my list
+              </button>
+              <button onClick={e => {
+                e.preventDefault();
+                onClickRemove()
+              }} className="btn btn-primary" >Remove
+              </button>
             </div>
-            <br></br>
+          </div>
+          <br></br>
+        </div>
+        <a href="/" className="btn btn-primary">Go Back</a>
       </div>
-    </div>
     )
   }
 }
+          
 
 export default Detalle

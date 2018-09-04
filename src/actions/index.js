@@ -27,7 +27,7 @@ export const addItemToList =  ( item )  => {
 
 	}
 	type: ADD_ITEM,
-	item
+	newItem
 }
 
 // export const addCharaToList = (chara) =>( {
