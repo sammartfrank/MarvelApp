@@ -9,8 +9,7 @@ const miListaReducer = (state=initialState, action) => {
 		case ADD_ITEM:
 			return [
 				...state, {
-					id: action.id
-				}
+					item: action			}
 			]
 		default:
 			return state
