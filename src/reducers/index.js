@@ -12,9 +12,9 @@ import searchReducer from './searchReducer'
 
 import searchDraftReducer from './searchDraftReducer'
 
-import miListaDeComicsReducer from './miListaDeComicsReducer'
+import detalleReducer from './detalleReducer'
 
-import miListaDeCharaReducer from './miListaDeCharaReducer'
+import miListaReducer from './miListaReducer'
 
 const rootReducer = combineReducers({
 
@@ -23,8 +23,8 @@ const rootReducer = combineReducers({
 	characters: charactersReducer,
 	searchDraft: searchDraftReducer,
 	searchRes: searchReducer,
-	miListaDeComics: miListaDeComicsReducer,
-	miListaDeChara: miListaDeCharaReducer,
+	detalle: detalleReducer,
+	miLista: miListaReducer,
 	form: formReducer
 })
 

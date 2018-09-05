@@ -4,7 +4,6 @@ import {
 	ADD_ITEM,
 	ADD_CHARA
 }
-
 from '../constants/actionTypes.js'
 
 //GET THE SEARCH 
@@ -21,16 +20,6 @@ export const changeDraft = ( valuesDraft ) => ({
 })
 
 export const addItemToList =  ( item )  => {
-	const newItem = {
-		type: ADD_ITEM,
-		value: item
-
-	}
 	type: ADD_ITEM,
-	newItem
+	item
 }
-
-// export const addCharaToList = (chara) =>( {
-// 	type:ADD_CHARA,
-// 	chara
-// })

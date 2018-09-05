@@ -4,14 +4,12 @@ import {
 
 const initialState = []
 
-const miListaDeComicsReducer = (state=initialState, action) => {
+const detalleReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case ADD_ITEM:
-			return [
-				...state, action.item
-			]
+			return [...state]
 		default:
 			return state
 	}
 }
-export default miListaDeComicsReducer
+export default detalleReducer

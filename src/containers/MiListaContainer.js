@@ -6,16 +6,14 @@ import {
   getSearchDraft,
   getCharacters,
   getComics,
-  getMilistaComics,
-  getMilistaChara
+  getMiLista
 } from '../selectors'
 
 const mapStateToProps = state => ({
   comics: getComics( state ),
   characters: getCharacters( state ),
   searchRes: getSearchDraft( state ),
-  miListaDeComics: getMilistaComics,
-  miListaDeChara: getMilistaChara
+  miLista: getMiLista(state)
 })
 
 const mapDispatchToProps = dispatch => ({

@@ -7,6 +7,4 @@ export const getCharacters = state => state.characters
 
 export const getSearchDraft = state => state.searchDraft
 
-export const getMilistaComics = state => state.miListaDeComics
-
-export const getMilistaChara = state => state.miListaDeChara
+export const getMiLista = state => state.miLista

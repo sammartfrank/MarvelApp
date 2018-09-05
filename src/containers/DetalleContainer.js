@@ -4,8 +4,7 @@ import {
   getSearchDraft,
   getCharacters,
   getComics,
-  getMilistaComics,
-  getMilistaChara
+  getMiLista
 } from '../selectors'
 
 import {
@@ -16,14 +15,14 @@ const mapStateToProps = state => ({
   comics: getComics( state ),
   characters: getCharacters( state ),
   searchRes: getSearchDraft( state ),
-  miListaDeComics: getMilistaComics( state ),
-  miListaDeChara: getMilistaChara(state)
+  miLista: getMiLista( state )
+
 })
 
 const mapDispatchToProps = dispatch => ({
-  onClickAdd: () => {
+  onClickAdd: ( id ) => {
     console.log()
-    dispatch( addItemToList() )
+    dispatch( addItemToList( id ) )
   },
   
 } )

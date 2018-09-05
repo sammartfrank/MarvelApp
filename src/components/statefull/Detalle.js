@@ -17,8 +17,6 @@ class Detalle extends Component {
     this.state = {
       item: null,
       loading: true,
-      comicMList: null,
-      characterMList: null
     }
     this.api = new MarvelApi()
   }
@@ -46,13 +44,6 @@ class Detalle extends Component {
       })
     }
   }
-  onClickAdd(e, item) {
-    this.setState({
-      comicMList: [
-      ...item, item
-      ]
-    })
-  }
 
 render () {
     const { item, loading } = this.state
@@ -70,12 +61,12 @@ render () {
               {item.description ? <p className="card-text" style={{color:'grey', width:'100%', textAlign:'center', justifyContent:'center', display:'flex'}}>{item.description}</p> : <p>No description available</p>}
               <button onClick={e => {
                 e.preventDefault();
-                onClickAdd()
+                onClickAdd( item)
               }} className="btn btn-primary">Add to my list
               </button>
               <button onClick={e => {
                 e.preventDefault();
-                onClickRemove()
+                onClickRemove(item)
               }} className="btn btn-primary" >Remove
               </button>
             </div>
