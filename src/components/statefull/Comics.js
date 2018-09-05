@@ -84,7 +84,7 @@ class Comics extends Component {
                           <ItemsList listadoResultados={ comics } type="comics" />
                         </div>
                         { error && <div><span>An Error Ocurred</span></div>}
-                        {loading && <img src="https://i.imgur.com/EH9HF6h.gif" width={190}/>}
+                        {loading && <img alt="loading" src="https://i.imgur.com/EH9HF6h.gif" width={190}/>}
                       </div>
                     </section>
                 </div>

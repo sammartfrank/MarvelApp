@@ -4,11 +4,7 @@ import MarvelApi from '../../services/MarvelApi.js';
 import GridItem from '../stateless/GridItem.js'
 
 // pasarle por props toda la data dinamica
-const cardstyl = {
-    minHeigth: '50vh',
-    background: 'rgba(200,200,200,0.1)',
-    borderRadius: '5%'
-}
+
 
 class Detalle extends Component {
 
@@ -61,12 +57,12 @@ render () {
               {item.description ? <p className="card-text" style={{color:'grey', width:'100%', textAlign:'center', justifyContent:'center', display:'flex'}}>{item.description}</p> : <p>No description available</p>}
               <button onClick={e => {
                 e.preventDefault();
-                onClickAdd( item)
+                onClickAdd()
               }} className="btn btn-primary">Add to my list
               </button>
               <button onClick={e => {
                 e.preventDefault();
-                onClickRemove(item)
+                onClickRemove()
               }} className="btn btn-primary" >Remove
               </button>
             </div>

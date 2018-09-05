@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+ import React, { Component } from 'react';
 import ItemsList from '../stateless/ItemsList.js';
 import Filtros from '../stateless/Filtros.js';
 import '../../App.css';
@@ -69,7 +69,7 @@ class Characters extends Component {
 				                    	<div className="row">
 				                   			 <ItemsList listadoResultados={ characters } />
 				                    	</div>
-				                   { loading && <img src="https://i.imgur.com/EH9HF6h.gif" width={ 200 }/> }
+				                   { loading && <img alt="loadng" src="https://i.imgur.com/EH9HF6h.gif" width={ 200 }/> }
 				                </div>
 				            </section>
 				        </div>

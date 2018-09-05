@@ -20,9 +20,9 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  onClickAdd: ( id ) => {
+  onClickAdd: () => {
     console.log()
-    dispatch( addItemToList( id ) )
+    dispatch( addItemToList() )
   },
   
 } )

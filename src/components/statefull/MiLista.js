@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ItemsList from '../stateless/ItemsList.js';
+// import ItemsList from '../stateless/ItemsList.js';
 import Filtros from '../stateless/Filtros.js';
 import '../../App.css';
 import '../../style.css';
@@ -11,7 +11,6 @@ class MiLista extends Component {
   }
 
 	render(){
-		const { miListaDeComics, miListaDeChara } = this.state
 		return (
 				<main role="main">
     				<div className="py-5 bg-light">

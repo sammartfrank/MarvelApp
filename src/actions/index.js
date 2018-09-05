@@ -2,7 +2,6 @@ import {
 	GET_SEARCH,
 	DRAFT_CHANGES,
 	ADD_ITEM,
-	ADD_CHARA
 }
 from '../constants/actionTypes.js'
 
@@ -19,7 +18,7 @@ export const changeDraft = ( valuesDraft ) => ({
 	value: valuesDraft
 })
 
-export const addItemToList =  ( item )  => {
+export const addItemToList =  ( item )  =>( {
 	type: ADD_ITEM,
 	item
-}
+})

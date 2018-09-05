@@ -22,7 +22,7 @@ class Home extends Component {
               <section className="items-section">
                 <h5 className="items-section-title" style={{color:'red',fontSize:'30px'}}>Hot Comics <NavLink to="/comics">View all</NavLink></h5>
                 <div className="items-section-body">
-                  {loading && <img src={loadingImage} width={ 200 }/>}
+                  {loading && <img  alt="loading" src={loadingImage} width={ 200 }/>}
                   <div className="row">
                     <ItemsList listadoResultados={comics} type="comic" />
                   </div>
@@ -31,7 +31,7 @@ class Home extends Component {
               <section className="items-section">
                   <h5 className="items-section-title" style={{color:'blue',fontSize:'30px'}}>Hot Characters <NavLink to="/characters">View all</NavLink></h5>
                   <div className="items-section-body">
-                    {loading && <img src="https://i.imgur.com/EH9HF6h.gif" width={ 200 }/>}
+                    {loading && <img alt="loading" src="https://i.imgur.com/EH9HF6h.gif" width={ 200 }/>}
                     <div className="row">
                       <ItemsList listadoResultados={characters} type="characters" />
                     </div>
