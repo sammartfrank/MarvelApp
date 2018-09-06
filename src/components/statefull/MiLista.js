@@ -3,7 +3,7 @@ import ItemsList from '../stateless/ItemsList.js';
 import Filtros from '../stateless/Filtros.js';
 import '../../App.css';
 
-const MiLista =  ({miLista, listadoResultados}) => {
+const MiLista =  ({miLista}) => {
         return (
                 <main role="main">
                     <div className="py-5 bg-light">
@@ -14,7 +14,7 @@ const MiLista =  ({miLista, listadoResultados}) => {
                         <section className="items-section">
                             <div className="items-section-body">
                                 <div className="row">
-                                    {!miLista.length ? (<p className="lead" style={{alignText:'center'}}>no hay elementos guardados</p>): <ItemsList listadoResultados={miLista}/>}
+                                    {!miLista.length ? (<div className="container"><p className="lead" style={{alignText:'center'}}>no hay elementos guardados</p></div>): <ItemsList listadoResultados={miLista}/>}
                                 </div>
                             </div>
                         </section>
