@@ -23,7 +23,7 @@ const MiLista =  ({miLista, listadoResultados}) => {
                         <section className="items-section">
                             <div className="items-section-body">
                                 <div className="row">
-                                    {!miLista.length ? (<p className="lead">no hay elementos guardados</p>): (miLista.map(item=> <li>{item}</li>))}
+                                    {!miLista.length ? (<p className="lead">no hay elementos guardados</p>): <ItemsList listadoResultados={miLista}/>}
                                 </div>
                             </div>
                         </section>
