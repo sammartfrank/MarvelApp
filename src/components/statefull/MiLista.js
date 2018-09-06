@@ -1,50 +1,35 @@
-import React, { Component } from 'react';
-// import ItemsList from '../stateless/ItemsList.js';
+import React from 'react';
+import ItemsList from '../stateless/ItemsList.js';
 import Filtros from '../stateless/Filtros.js';
 import '../../App.css';
 
-class MiLista extends Component {
-    
+const MiLista =  ({miLista, listadoResultados}) => {
 
-    componentDidMount() {
-    const { loadListData } = this.props
-    loadListData()
-  }
-
-	render(){
-		return (
-				<main role="main">
-    				<div className="py-5 bg-light">
-        				<div className="container">
-				            <h1>My List</h1>
-				         	<div className="filters-bar">
-			                	<div className="filters-bar-left">
-			                    	<select name="filter-viewed" id="filter-year" className="form-control">
-			                        	<option value="not-viewed">Not Viewed</option>
-			                        	<option value="viewed">Viewed</option>
-			                    	</select>
-			                		<Filtros />
-			                		<br></br>
-			                	</div>
-            			</div>
-            			<section className="items-section">
-                			<div className="items-section-body">
-                    			<div className="row">
-                    				{/*<ItemsList listadoResultados={ miListaDeComics}/>*/}
-                    			</div>
-                			</div>
-            			</section>
-            			<section className="items-section">
-                			<div className="items-section-body">
-                    			<div className="row">
-                    				{/*<ItemsList listadoResultados={miListaDeChara}/>*/}
-                    			</div>
-                			</div>
-            			</section>
-        				</div>
-    				</div>
-				</main>
-			)
-	}
+        return (
+                <main role="main">
+                    <div className="py-5 bg-light">
+                        <div className="container">
+                            <h1>My List</h1>
+                            <div className="filters-bar">
+                                <div className="filters-bar-left">
+                                    <select name="filter-viewed" id="filter-year" className="form-control">
+                                        <option value="not-viewed">Not Viewed</option>
+                                        <option value="viewed">Viewed</option>
+                                    </select>
+                                    <Filtros />
+                                    <br></br>
+                                </div>
+                        </div>
+                        <section className="items-section">
+                            <div className="items-section-body">
+                                <div className="row">
+                                    {!miLista.length ? (<p className="lead">no hay elementos guardados</p>): (miLista.map(item=> <li>{item}</li>))}
+                                </div>
+                            </div>
+                        </section>
+                        </div>
+                    </div>
+                </main>
+            )
 }
 export default MiLista;

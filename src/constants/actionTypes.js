@@ -4,6 +4,8 @@ export const GET_COMICS = 'GET_COMICS'
 
 export const ADD_ITEM = 'ADD_ITEM'
 
+export const REMOVE_ITEM = 'REMOVE_ITEM'
+
 export const GET_CHARACTERS = 'GET_CHARACTERS'
 
 export const ADD_CHARA = 'ADD_CHARA'

@@ -57,12 +57,12 @@ render () {
               {item.description ? <p className="card-text" style={{color:'grey', width:'100%', textAlign:'center', justifyContent:'center', display:'flex'}}>{item.description}</p> : <p>No description available</p>}
               <button onClick={e => {
                 e.preventDefault();
-                onClickAdd()
+                onClickAdd(item)
               }} className="btn btn-primary">Add to my list
               </button>
               <button onClick={e => {
                 e.preventDefault();
-                onClickRemove()
+                onClickRemove(item)
               }} className="btn btn-primary" >Remove
               </button>
             </div>

@@ -8,7 +8,8 @@ import {
 } from '../selectors'
 
 import {
-	addItemToList
+	addItemToList,
+  removeItemFromList
 } from '../actions'
 
 const mapStateToProps = state => ({
@@ -20,10 +21,12 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  onClickAdd: () => {
-    console.log()
-    dispatch( addItemToList() )
+  onClickAdd: ( item ) => {
+    dispatch( addItemToList( item ) )
   },
+  onClickRemove: (item ) => {
+    dispatch( removeItemFromList(item) )
+  }
   
 } )
 

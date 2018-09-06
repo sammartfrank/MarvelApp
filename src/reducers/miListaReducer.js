@@ -1,5 +1,6 @@
 import {
-	ADD_ITEM
+	ADD_ITEM,
+	REMOVE_ITEM
 } from '../constants/actionTypes.js'
 
 const initialState = []
@@ -9,8 +10,11 @@ const miListaReducer = (state=initialState, action) => {
 		case ADD_ITEM:
 			return [
 				...state, {
-					item: action			}
+					item: action.item,
+				}
 			]
+		case REMOVE_ITEM:
+			return state.filter(t=> t.item !==action.item)
 		default:
 			return state
 	}
