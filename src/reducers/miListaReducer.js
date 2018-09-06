@@ -9,13 +9,10 @@ const miListaReducer = (state=initialState, action) => {
 	switch (action.type) {
 		case ADD_ITEM:
 			return [
-				...state, 
-					{
-                        id: action.item.id
-                    }
-			]
+				...state, action.item
+                ]
 		case REMOVE_ITEM:
-			return state.filter(t => t.id !==action.id)
+			return state.filter(t => t.item !==action.item)
 		default:
 			return state
 	}

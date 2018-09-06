@@ -13,8 +13,6 @@ class Detalle extends Component {
     this.state = {
       item: null,
       loading: true,
-      comic: [],
-      character: []
     }
     this.api = new MarvelApi()
   }
@@ -30,7 +28,6 @@ class Detalle extends Component {
         this.setState( {
           loading: false,
           item: comic,
-          comic: comic
         })
       })
     } else {
@@ -39,7 +36,6 @@ class Detalle extends Component {
         this.setState( {
           loading: false,
           item: character,
-          character: character
         })
       })
     }

@@ -3,7 +3,7 @@ import ItemsList from '../stateless/ItemsList.js';
 import Filtros from '../stateless/Filtros.js';
 import '../../App.css';
 
-const MiLista =  ({miLista}) => {
+const MiLista =  ({miLista, listadoResultados}) => {
         return (
                 <main role="main">
                     <div className="py-5 bg-light">
