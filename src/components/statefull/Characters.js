@@ -51,18 +51,6 @@ class Characters extends Component {
 				    <div className="py-5 bg-light">
 				        <div className="container">
 				        <h1 style={{color:'blue', fontWeight:'bold'}}> Characters </h1>
-				        <form className="form-inline my-2 my-md-0" action="">
-				        	<select className="form-control md"> 
-				        		<option>Año</option>
-				        	</select>
-				        	<select className="form-control lg">
-				        		<option>Ordenado por</option>
-				        	</select>
-				        	<select className="form-control md">
-				        		<option>Generos</option>
-				        	</select>
-				       		<Filtros />
-                		</form>
                 		<br></br>
 				            <section className="items-section">
 				                <div className="items-section-body">

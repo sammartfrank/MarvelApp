@@ -64,19 +64,6 @@ class Comics extends Component {
             <div className="py-5 bg-light">
                 <div className="container">
                 <h1 style={{ color:'red', fontWeight:'bold' }}>Comics </h1>
-                {/*Botones filtro*/}
-                <form className="form-inline my-2 my-md-0" >
-                  <select className="form-control"> 
-                    <option>Año</option>
-                  </select>
-                  <select className="form-control">
-                    <option>Ordenado por</option>
-                  </select>
-                  <select className="form-control">
-                    <option>Generos</option>
-                  </select>
-                <Filtros />
-                    </form>
                     <br></br>
                     <section className="items-section">
                         <div className="items-section-body">
