@@ -42,7 +42,7 @@ class Detalle extends Component {
   }
 
 render () {
-    const { item, loading } = this.state
+    const { item, loading, miLista } = this.state
     const { onClickAdd, onClickRemove} = this.props
     return loading ? (
         <span>Loading...</span>
@@ -66,6 +66,7 @@ render () {
               }} className="btn btn-primary" >Remove
               </button>
             </div>
+           
           </div>
           <br></br>
         </div>
