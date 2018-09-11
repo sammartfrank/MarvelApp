@@ -22,6 +22,12 @@ class Characters extends Component {
 				characters: [ ...this.state.characters, ...res ],
 			})
 		})
+		this.api.getCharacterById().then( res => {
+			this.setState({
+				loading: false,
+				characters: [...this.state.characters, ...res].map( c => ({...c, type: 'character'}))
+			})
+		})
 	window.addEventListener( 'scroll', this.handleScroll );
 	}
 	handleScroll = ( event ) => {
@@ -55,7 +61,7 @@ class Characters extends Component {
 				            <section className="items-section">
 				                <div className="items-section-body">
 				                    	<div className="row">
-				                   			 <ItemsList listadoResultados={ characters } />
+				                   			 <ItemsList listadoResultados={ characters } type="characters" />
 				                    	</div>
 				                   { loading && <img alt="loadng" src="https://i.imgur.com/EH9HF6h.gif" width={ 200 }/> }
 				                </div>

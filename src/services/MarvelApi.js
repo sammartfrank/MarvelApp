@@ -26,8 +26,8 @@ class MarvelApi {
 
   getComicById (comicId) {
     return this.axios.get(`/v1/public/comics/${comicId}`)
-      .then(response => response.data.data.results.map(c => ({...c, type: 'comic'})))
-  }
+      .then(response => response.data.data.results.map( c => ({...c, type: 'comic'}))[0])
+}
 
   getComicCharacters (comicId) {
     return this.axios.get(`/vi/public/comics/${comicId}`)
@@ -51,7 +51,7 @@ class MarvelApi {
 
   getCharacterById (characterId) {
     return this.axios.get(`/v1/public/characters/${characterId}`)
-      .then(response => response.data.data.results.map( c => ({...c, type: 'character'})))
+      .then(response => response.data.data.results.map(c=> ({...c, type: 'character'}))[0])
   }
 
   search (values, type) {
