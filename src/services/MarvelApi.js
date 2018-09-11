@@ -21,12 +21,12 @@ class MarvelApi {
       params: {
         offset: (page - 1) * 5,
       }
-    }).then(response => response.data.data.results.map(c => ({...c, type: 'comic'})))
+    }).then(response => response.data.data.results)
   }
 
   getComicById (comicId) {
     return this.axios.get(`/v1/public/comics/${comicId}`)
-      .then(response => response.data.data.results[0])
+      .then(response => response.data.data.results.map(c => ({...c, type: 'comic'})))
   }
 
   getComicCharacters (comicId) {
@@ -46,12 +46,12 @@ class MarvelApi {
         offset:( page - 1 ) * 5,
       }
     })
-    .then(response => response.data.data.results.map( c => ({ ...c, type: 'character'})))
+    .then(response => response.data.data.results)
   }
 
   getCharacterById (characterId) {
     return this.axios.get(`/v1/public/characters/${characterId}`)
-      .then(response => response.data.data.results[0])
+      .then(response => response.data.data.results.map( c => ({...c, type: 'character'})))
   }
 
   search (values, type) {
