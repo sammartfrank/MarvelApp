@@ -66,7 +66,7 @@ render () {
               }} className="btn btn-primary" >Remove
               </button>
             </div>
-           
+          
           </div>
           <br></br>
         </div>

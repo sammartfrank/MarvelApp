@@ -12,7 +12,7 @@ const miListaReducer = (state=initialState, action) => {
 				...state, action.item
                 ]
 		case REMOVE_ITEM:
-			return state.filter(t => t.item !==action.item)
+			return state.filter(t => t.item !== action.item)
 		default:
 			return state
 	}

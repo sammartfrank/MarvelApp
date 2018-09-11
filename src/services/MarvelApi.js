@@ -21,7 +21,7 @@ class MarvelApi {
       params: {
         offset: (page - 1) * 5,
       }
-    }).then(response => response.data.data.results)
+    }).then(response => response.data.data.results.map(c => ({...c, type: 'comic'})))
   }
 
   getComicById (comicId) {
@@ -46,7 +46,7 @@ class MarvelApi {
         offset:( page - 1 ) * 5,
       }
     })
-    .then(response => response.data.data.results)
+    .then(response => response.data.data.results.map( c => ({ ...c, type: 'character'})))
   }
 
   getCharacterById (characterId) {
