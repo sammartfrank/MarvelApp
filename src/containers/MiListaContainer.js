@@ -1,6 +1,5 @@
 import { connect } from 'react-redux'
 import MiLista from '../components/statefull/MiLista'
-import MarvelApi from '../services/MarvelApi.js'
 
 import {
   getSearchDraft,

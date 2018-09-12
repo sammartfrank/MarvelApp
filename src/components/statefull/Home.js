@@ -11,6 +11,9 @@ class Home extends Component {
   }
 
   componentWillUnmount() {
+    this.setState({
+      error: false
+    })
   }
   render () {
     const { loading, comics, characters } = this.props

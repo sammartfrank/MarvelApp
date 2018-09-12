@@ -1,6 +1,5 @@
 import React from 'react';
 import ItemsList from '../stateless/ItemsList.js';
-import Filtros from '../stateless/Filtros.js';
 import '../../App.css';
 
 const MiLista =  ({miLista, listadoResultados}) => {
@@ -9,7 +8,6 @@ const MiLista =  ({miLista, listadoResultados}) => {
                     <div className="py-5 bg-light">
                         <div className="container">
                             <h1>My List</h1>
-                            
                         </div>
                         <section className="items-section">
                             <div className="items-section-body">

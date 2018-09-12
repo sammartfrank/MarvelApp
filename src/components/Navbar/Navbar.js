@@ -14,9 +14,9 @@ const Navbar = () => {
 										<li className="nav-item active"><NavLink className="nav-link" to='/MiLista' activeStyle={{color:'lightblue',fontWeight: 'bold',fontSize:'18px'}}>My List</NavLink></li>
 									</ul>
 								</div>
+						<SearchBox />
 						</nav>
 						<br></br>
-						<SearchBox />
 					</div>
 				)
 	}

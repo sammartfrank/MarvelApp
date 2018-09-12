@@ -8,15 +8,15 @@ import './sty.css'
 
 const renderField = ({ input, label, type, meta: { touched, error} }) => (
 	<div> 
-		<input { ...input } type={ type }/>
+		<input { ...input }  placeholder="Search..." type={ type }/>
+	    <button className="btn btn-outline-danger btn-lg" style={{float: 'right'}} type="submit">Search</button>
   </div>
 	)
 let SearchBoxForm = ({ handleSubmit, submitSucceded, pristine, reset, subtmitting, error }) => (
-	<div className="container-fluid">
+	<div className="container" style={{float:'right'}}>
 		<form onSubmit={ handleSubmit }>
-	     	<Field name="search" component={ renderField }  className="form-control" type="text"  aria-label="Search"   required />
-	     	<button className="btn btn-outline-danger btn-lg" type="submit">Search</button>
-	     	{error && <div class="alert alert-danger" role="alert">{error}</div>}
+	     	<Field name="search" component={ renderField } className="form-control" type="text"  aria-label="Search" />
+	     	{error && <div className="alert alert-danger" role="alert">{error}</div>}
 	  </form>
   </div>
 	)
