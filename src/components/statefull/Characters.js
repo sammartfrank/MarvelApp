@@ -1,4 +1,4 @@
- import React, { Component } from 'react';
+import React, { Component } from 'react';
 import ItemsList from '../stateless/ItemsList.js';
 import '../../App.css';
 import MarvelApi from '../../services/MarvelApi.js'

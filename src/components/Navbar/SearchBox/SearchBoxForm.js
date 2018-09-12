@@ -16,7 +16,7 @@ let SearchBoxForm = ({ handleSubmit, submitSucceded, pristine, reset, subtmittin
 	<div className="container" style={{float:'right'}}>
 		<form onSubmit={ handleSubmit }>
 	     	<Field name="search" component={ renderField } className="form-control" type="text"  aria-label="Search" />
-	     	{error && <div className="alert alert-danger" role="alert">{error}</div>}
+	     	{/*error && <div className="alert alert-danger" role="alert">{error}</div>*/}
 	  </form>
   </div>
 	)
