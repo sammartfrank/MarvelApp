@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../App.css';
 import { NavLink } from 'react-router-dom';
-import SearchBox from './SearchBox'
+// import SearchBox from './SearchBox'
 const Navbar = () => {
 		return (
 					<div className='container'>
@@ -14,7 +14,7 @@ const Navbar = () => {
 										<li className="nav-item active"><NavLink className="nav-link" to='/MiLista' activeStyle={{color:'lightblue',fontWeight: 'bold',fontSize:'18px'}}>My List</NavLink></li>
 									</ul>
 								</div>
-						<SearchBox />
+						{/*<SearchBox />*/}
 						</nav>
 						<br></br>
 					</div>

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../../App.css';
 import MarvelApi from '../../services/MarvelApi.js';
 import GridItem from '../stateless/GridItem.js'
 

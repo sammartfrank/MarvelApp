@@ -15,7 +15,7 @@ const renderField = ({ input, label, type, meta: { touched, error} }) => (
 let SearchBoxForm = ({ handleSubmit, submitSucceded, pristine, reset, subtmitting, error }) => (
 	<div className="container" style={{float:'right'}}>
 		<form onSubmit={ handleSubmit }>
-	     	<Field name="search" component={ renderField } className="form-control" type="text"  aria-label="Search" />
+	     	<Field name="keywords" component={ renderField } className="form-control" type="text"  aria-label="Search" />
 	     	{/*error && <div className="alert alert-danger" role="alert">{error}</div>*/}
 	  </form>
   </div>
@@ -24,9 +24,9 @@ export default SearchBoxForm = reduxForm({
 	form:'search',
 	onSubmit: ( values, dispatch ) => {
 		console.log( 'values', values)
-		return dispatch( search( values )).catch( err => {
+		return dispatch( search( values.keywords )).catch( err => {
 			throw new SubmissionError	({
-				_error: 'Error in the Search Engine'
+				_error: 'Error in the Network'
 			})
 		})
 	}

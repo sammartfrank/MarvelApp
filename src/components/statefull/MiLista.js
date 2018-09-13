@@ -12,7 +12,7 @@ const MiLista =  ({miLista, listadoResultados}) => {
                         <section className="items-section">
                             <div className="items-section-body">
                                 <div className="row">
-                                    {!miLista.length ? (<div className="container"><p className="lead" style={{alignText:'center'}}>no hay elementos guardados</p></div>): <ItemsList listadoResultados={miLista}/>}
+                                    {!miLista.length ? (<div className="container"><p className="lead" style={{alignText:'center', color: 'grey'}}>no hay elementos guardados</p></div>): (<div className="container"><ItemsList listadoResultados={miLista}/></div>)}
                                 </div>
                             </div>
                         </section>

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ItemsList from '../stateless/ItemsList.js';
-import '../../App.css';
 import MarvelApi from '../../services/MarvelApi.js'
 
 class Characters extends Component {
@@ -24,7 +23,7 @@ class Characters extends Component {
 		this.api.getCharacterById().then( res => {
 			this.setState({
 				loading: false,
-				characters: [...this.state.characters, ...res].map( c => ({...c, type: 'character'}))
+				characters: [...this.state.characters, ...res]
 			})
 		})
 	window.addEventListener( 'scroll', this.handleScroll );

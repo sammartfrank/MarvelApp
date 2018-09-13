@@ -2,14 +2,14 @@ import React, { Component } from 'react'
 import ItemsList from '../stateless/ItemsList.js'
 import { NavLink } from 'react-router-dom'
 import loadingImage from './images/loading.gif'
-
+import '../../../src/style.css'
 class Home extends Component {
 
   componentDidMount() {
     const { loadHomeData } = this.props
     loadHomeData()
   }
-
+  
   componentWillUnmount() {
     this.setState({
       error: false
