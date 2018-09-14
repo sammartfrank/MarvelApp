@@ -1,6 +1,16 @@
 import React, { Component } from 'react';
 import MarvelApi from '../../services/MarvelApi.js';
 import GridItem from '../stateless/GridItem.js'
+import Background from './images/qbkls.png'
+
+
+const styler = {
+backgroundImage: `url(${Background})`,
+margin: '10px',
+width: '50%'
+
+}
+
 
 // pasarle por props toda la data dinamica
 
@@ -46,10 +56,10 @@ render () {
     return loading ? (
         <span>Loading...</span>
       ) : (  
-      <div className="container">
+      <div className="container" >
         <div className="row">
           <GridItem  {...this.state.item}/>
-          <div className="card" style={{width: '50%'}}>
+          <div className="card" style={styler} >
             <div className="card-body">
               <h5 className="card-title" style={{fontWeight:'bold'}}>{item.title}</h5>
               <h5 className="card-title">{item.name}</h5>
