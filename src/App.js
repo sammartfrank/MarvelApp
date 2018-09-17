@@ -13,13 +13,15 @@ import MarvelApi   from './services/MarvelApi.js'
 import { Switch, Route, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 
+
+
 class App extends Component {
   render () {
     return (
       <div className="App">
         <Navbar />
         <br></br>
-        <div className="container">
+        <div className="container" >
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/comics" component={Comics} />
