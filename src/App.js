@@ -31,7 +31,7 @@ class App extends Component {
             <Route path="/detalle/:type/:id" component={Detalle} />
             <Route component={NotFound} />
           </Switch>
-          {/*<NotificationContainer />*/}
+          <Notif />
         </div>
         <div className="footer">
           <Footer />

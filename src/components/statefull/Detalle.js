@@ -72,7 +72,7 @@ render () {
           </div>
           <br></br>
         </div>
-        <a href="/" className="btn btn-primary" style={{marginBottom:'10px'}}>Go Back</a>
+        <a href="/" className="btn btn-primary" style={{margin:'10px'}}>Go Back</a>
       </div>
     )
   }
