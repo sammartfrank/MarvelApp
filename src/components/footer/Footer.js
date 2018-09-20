@@ -7,7 +7,7 @@ const footsy = {
 }
 
 const Footer = () => (
-	<div className="container" style={ footsy }>
+	<div className="container fixed-bottom" style={ footsy }>
 	<br></br>
 		<p> Contents Brought By Marvel API <a href="http://developer.marvel.com" target="_blank" rel="noopener noreferrer">Marvel</a></p>
 		<p> Reserved Rights </p>

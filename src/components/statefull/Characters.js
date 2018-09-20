@@ -54,8 +54,9 @@ class Characters extends Component {
 				<main role="main">
 				    <div className="py-5 bg-light">
 				        <div className="container">
-				        <h1 style={{color:'blue', fontWeight:'bold'}}> Characters </h1>
+				        <h1 style={{color:'blue', fontWeight:'bold', fontFamily: 'Marvel'}}> Characters </h1>
                 		<br></br>
+                		<hr />
 				            <section className="items-section">
 				                <div className="items-section-body">
 				                    	<div className="row">

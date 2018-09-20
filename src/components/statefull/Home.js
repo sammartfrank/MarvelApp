@@ -9,7 +9,6 @@ const stylerx = {
   backgroundImage: `url(${Background})`,
   backgroundRepeat: 'no-repeat',
   backgroundAttachment: 'fixed',
-  minWidth: '100vh'
 }
 
 

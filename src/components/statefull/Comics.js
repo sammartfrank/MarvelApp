@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ItemsList from '../stateless/ItemsList.js';
 import MarvelApi from '../../services/MarvelApi.js';
+import backg from './images/banner.jpg'
 
 class Comics extends Component {
   constructor( props ) {
@@ -21,12 +22,6 @@ class Comics extends Component {
         comics: comics
       })
     })
-    // this.api.getCharacters().then(res => {
-    //  this.setState({
-    //    loading:false, 
-    //    characters: [...this.state.characters, ...res]
-    //  })
-    // })
     window.addEventListener( 'scroll', this.handleScroll )
   }
 
@@ -61,8 +56,9 @@ class Comics extends Component {
         <main role="main">
             <div className="py-5 bg-light">
                 <div className="container">
-                <h1 style={{ color:'red', fontWeight:'bold' }}>Comics </h1>
-                    <br></br>
+                <h1 style={{ color:'white', fontSize: '50px', fontWeight:'bold', fontFamily: 'Marvel', backgroundImage:`url(${backg})`, backgroundRepeat: 'none', maxWidth:'100%', maxHeigth:'100%' }}>Comics </h1>
+                    <br></br> 
+                    <hr />
                     <section className="items-section">
                         <div className="items-section-body">
                         <div className="row">

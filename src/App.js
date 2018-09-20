@@ -9,6 +9,8 @@ import NotFound from './components/stateless/NotFound.js'
 import Navbar from './components/Navbar/Navbar.js'
 import Footer from './components/footer/Footer.js'
 import MarvelApi   from './services/MarvelApi.js'
+import 'react-notifications/lib/notifications.css';
+import Notif from './components/stateless/Notif.js'
 
 import { Switch, Route, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
@@ -20,7 +22,6 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar />
-        <br></br>
         <div className="container" >
           <Switch>
             <Route exact path="/" component={Home} />
@@ -30,6 +31,7 @@ class App extends Component {
             <Route path="/detalle/:type/:id" component={Detalle} />
             <Route component={NotFound} />
           </Switch>
+          {/*<NotificationContainer />*/}
         </div>
         <div className="footer">
           <Footer />

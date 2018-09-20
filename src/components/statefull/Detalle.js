@@ -2,18 +2,13 @@ import React, { Component } from 'react';
 import MarvelApi from '../../services/MarvelApi.js';
 import GridItem from '../stateless/GridItem.js'
 import Background from './images/qbkls.png'
+import Notif from '../stateless/Notif.js'
 
 
 const styler = {
 backgroundImage: `url(${Background})`,
-margin: '10px',
 width: '50%'
-
 }
-
-
-// pasarle por props toda la data dinamica
-
 
 class Detalle extends Component {
 
@@ -52,7 +47,7 @@ class Detalle extends Component {
 
 render () {
     const { item, loading } = this.state
-    const { onClickAdd, onClickRemove} = this.props
+    const { onClickAdd } = this.props
     return loading ? (
         <span>Loading...</span>
       ) : (  
@@ -64,22 +59,20 @@ render () {
               <h5 className="card-title" style={{fontWeight:'bold'}}>{item.title}</h5>
               <h5 className="card-title">{item.name}</h5>
               {item.description ? <p className="card-text" style={{color:'grey', width:'100%', textAlign:'center', justifyContent:'center', display:'flex'}}>{item.description}</p> : <p>No description available</p>}
+              <hr />
               <button onClick={e => {
                 e.preventDefault();
-                onClickAdd(item)
-              }} className="btn btn-primary">Add to my list
+                onClickAdd(item);
+                // createNotification('success')
+              }} className="btn btn-success" style={{margin: '5px'}}>Add to my list
               </button>
-              <button onClick={e => {
-                e.preventDefault();
-                onClickRemove(item)
-              }} className="btn btn-primary" >Remove
-              </button>
+
             </div>
           
           </div>
           <br></br>
         </div>
-        <a href="/" className="btn btn-primary">Go Back</a>
+        <a href="/" className="btn btn-primary" style={{marginBottom:'10px'}}>Go Back</a>
       </div>
     )
   }
@@ -87,3 +80,10 @@ render () {
           
 
 export default Detalle
+
+
+ {/* <button onClick={e => {
+                e.preventDefault();
+                onClickRemove(item)
+              }} className="btn btn-primary"  style={{margin: '5px'}} >Remove
+              </button>*/}
