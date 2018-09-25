@@ -99,13 +99,14 @@ The below snippet of CSS must be included into your project. Future release may 
     left: 0;
     visibility: hidden;
     opacity: 0;
-    transition: all .5s ease-in-out;
+    transition: all 1s ease-in-out;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, .5);
     text-align: center;
+    min-height: auto;
 }
 
 .grid-item:hover {
@@ -115,6 +116,7 @@ The below snippet of CSS must be included into your project. Future release may 
 .grid-item:hover .grid-item-body {
     visibility: visible;
     opacity: 1;
+    transform: scale(1.1);
 }
 
 .grid-item-title {
@@ -186,6 +188,8 @@ The below snippet of CSS must be included into your project. Future release may 
     display: flex;
     align-items: center;
     justify-content: center;
+    
+
 }
 
 @-moz-keyframes spin {

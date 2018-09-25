@@ -6,7 +6,7 @@ import '../../../src/style.css'
 import Background from './images/marv1.png'
 
 const stylerx = {
-  backgroundImage: `url(${Background})`,
+  // backgroundImage: `url(${Background})`,
   backgroundRepeat: 'no-repeat',
   backgroundAttachment: 'fixed',
 }
@@ -32,7 +32,8 @@ class Home extends Component {
           <div className="py-5 bg-light" >
             <div className="container" >
               <section className="items-section" style={stylerx} >
-                <h5 className="items-section-title" style={{color:'red',fontSize:'30px'}}>Hot Comics <NavLink to="/comics">View all</NavLink></h5>
+                <h5 className="title" style={{color:'red',fontSize:'30px', fontFamily: 'Marvel'}}>Hot Comics <NavLink to="/comics">View all</NavLink></h5>
+                <hr />
                 <div className="items-section-body">
                   {loading && <img  alt="loading" src={loadingImage} width={ 200 }/>}
                   <div className="row">
